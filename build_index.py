@@ -21,9 +21,9 @@ import html
 REPO_PATH = Path(sys.argv[1] if len(sys.argv) > 1 else os.path.expanduser("~/market-briefs"))
 
 BRIEF_PATTERNS = {
-    "us-wrap":      (re.compile(r"^US-Brief-(\d{4})-(\d{2})-(\d{2})\.html$"),     "🇺🇸 US Overnight Wrap",  "us-wrap"),
-    "us-premarket": (re.compile(r"^US-PreMarket-(\d{4})-(\d{2})-(\d{2})\.html$"), "🇺🇸 US Pre-Market",       "us-premarket"),
-    "apac":         (re.compile(r"^APAC-Brief-(\d{4})-(\d{2})-(\d{2})\.html$"),   "🌏 APAC Wrap",            "apac"),
+    "us-wrap":      (re.compile(r"^US-Brief-(\d{4})-(\d{2})-(\d{2})\.html$"),     "US Overnight Wrap",  "us-wrap"),
+    "us-premarket": (re.compile(r"^US-PreMarket-(\d{4})-(\d{2})-(\d{2})\.html$"), "US Pre-Market",       "us-premarket"),
+    "apac":         (re.compile(r"^APAC-Brief-(\d{4})-(\d{2})-(\d{2})\.html$"),   "APAC Wrap",            "apac"),
 }
 
 def extract_headline(filepath: Path) -> str:
@@ -132,13 +132,13 @@ def render_index(briefs):
   header.hero {{
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     color: #0f172a;
-    padding: 32px 28px 24px;
+    padding: 22px 24px 18px;
     border-radius: 14px;
     border-left: 6px solid #3b82f6;
     border-top: 1px solid #e2e8f0;
     border-right: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     box-shadow: 0 2px 6px rgba(15,23,42,0.05);
     position: relative;
     overflow: hidden;
@@ -147,26 +147,12 @@ def render_index(briefs):
     content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
     background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #f59e0b 100%);
   }}
-  header.hero .eyebrow {{ font-size: 11px; color: #3b82f6; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 700; margin-bottom: 6px; }}
-  header.hero h1 {{ margin: 0 0 8px 0; font-size: 28px; letter-spacing: -0.5px; font-weight: 800; }}
-  header.hero .sub {{ color: #475569; font-size: 14px; margin-bottom: 14px; max-width: 620px; }}
-  header.hero .tags .tag {{
-    display: inline-block;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    color: #1d4ed8;
-    padding: 4px 11px;
-    border-radius: 12px;
-    font-size: 10.5px;
-    font-weight: 700;
-    margin-right: 6px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }}
+  header.hero .eyebrow {{ font-size: 10.5px; color: #3b82f6; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 700; margin-bottom: 4px; }}
+  header.hero h1 {{ margin: 0; font-size: 24px; letter-spacing: -0.5px; font-weight: 800; }}
   .filter-bar {{
     display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
     background: #ffffff;
-    padding: 12px 14px;
+    padding: 10px 12px;
     border-radius: 10px;
     border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px rgba(15,23,42,0.04);
@@ -182,9 +168,22 @@ def render_index(briefs):
     cursor: pointer;
     letter-spacing: 0.3px;
     transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
   }}
+  .filter-btn::before {{
+    content: ""; display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #94a3b8;
+  }}
+  .filter-btn.us-wrap::before      {{ background: #1d4ed8; }}
+  .filter-btn.us-premarket::before {{ background: #047857; }}
+  .filter-btn.apac::before         {{ background: #b91c1c; }}
   .filter-btn:hover {{ background: #e2e8f0; color: #0f172a; }}
   .filter-btn.active {{ background: #3b82f6; color: #fff; border-color: #3b82f6; box-shadow: 0 1px 3px rgba(59,130,246,0.3); }}
+  .filter-btn.active::before {{ background: #fff; }}
   .filter-btn.us-wrap.active      {{ background: #1d4ed8; border-color: #1d4ed8; }}
   .filter-btn.us-premarket.active {{ background: #047857; border-color: #047857; }}
   .filter-btn.apac.active         {{ background: #b91c1c; border-color: #b91c1c; }}
@@ -264,9 +263,8 @@ def render_index(briefs):
 
   @media (max-width: 640px) {{
     body {{ padding: 12px; font-size: 14px; }}
-    header.hero {{ padding: 22px 18px 18px; }}
-    header.hero h1 {{ font-size: 22px; }}
-    header.hero .sub {{ font-size: 13px; }}
+    header.hero {{ padding: 18px 16px 14px; }}
+    header.hero h1 {{ font-size: 20px; }}
     .filter-btn {{ font-size: 11px; padding: 6px 11px; }}
     .brief-row {{ padding: 10px 12px; gap: 10px; }}
     .brief-date {{ min-width: 48px; padding: 5px 3px 4px; }}
@@ -281,21 +279,14 @@ def render_index(briefs):
 
   <header class="hero">
     <div class="eyebrow">Daily Market Briefs · Mon-Fri</div>
-    <h1>Carson's Market Briefs</h1>
-    <div class="sub">Cross-asset overnight wraps, pre-market positioning, and APAC session recaps — interview-prep edition for Sales &amp; Trading (Rates/FX/EM), Investment Banking (DCM/M&amp;A), and Equity Research (Semis + AI focus).</div>
-    <div class="tags">
-      <span class="tag">Rates/Macro</span>
-      <span class="tag">FX/EM</span>
-      <span class="tag">DCM/M&amp;A</span>
-      <span class="tag">Equity Research</span>
-    </div>
+    <h1>US &amp; APAC Market Overview</h1>
   </header>
 
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All Briefs</button>
-    <button class="filter-btn us-wrap" data-filter="us-wrap">🇺🇸 US Overnight</button>
-    <button class="filter-btn us-premarket" data-filter="us-premarket">🇺🇸 US Pre-Market</button>
-    <button class="filter-btn apac" data-filter="apac">🌏 APAC Wrap</button>
+    <button class="filter-btn us-wrap" data-filter="us-wrap">US Overnight</button>
+    <button class="filter-btn us-premarket" data-filter="us-premarket">US Pre-Market</button>
+    <button class="filter-btn apac" data-filter="apac">APAC Wrap</button>
   </div>
 
   <div class="brief-list" id="brief-list">
