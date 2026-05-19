@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC Wrap — Tue May 19, 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f1f5f9; color: #0f172a; margin: 0; padding: 16px; line-height: 1.45; font-size: 15px; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  /* HEADER — APAC red gradient */
+  header.dark { background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%); color: #0f172a; padding: 24px 24px 20px; border-radius: 14px 14px 0 0; border-left: 6px solid #b91c1c; border-top: 1px solid #fecaca; border-right: 1px solid #fecaca; position: relative; overflow: hidden; box-shadow: 0 2px 6px rgba(15,23,42,0.05); }
+  header.dark::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #b91c1c 0%, #f59e0b 50%, #6366f1 100%); }
+  header.dark .eyebrow { font-size: 11px; color: #b91c1c; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; font-weight: 700; }
+  header.dark h1 { margin: 0 0 6px 0; font-size: 23px; letter-spacing: -0.3px; font-weight: 700; color: #0f172a; }
+  header.dark .sub { color: #64748b; font-size: 13px; margin-bottom: 12px; }
+  header.dark .tag { display: inline-block; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; padding: 3px 10px; border-radius: 12px; font-size: 10.5px; font-weight: 600; margin-right: 6px; letter-spacing: 0.4px; text-transform: uppercase; }
+
+  /* STATS PANEL */
+  .stats-panel { background: #ffffff; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; padding: 14px 18px; display: flex; flex-direction: column; gap: 10px; }
+  .stats-row { display: grid; gap: 8px; }
+  .stats-row.row-indices { grid-template-columns: repeat(4, 1fr); }
+  .stats-row.row-yields  { grid-template-columns: repeat(4, 1fr); }
+  .stats-row.row-fx-cmd  { grid-template-columns: repeat(6, 1fr); }
+  .stats-row-label { grid-column: 1 / -1; font-size: 9.5px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 2px; border-bottom: 1px dashed #e2e8f0; margin-bottom: 2px; }
+  .stat-tile { background: #f8fafc; border-radius: 8px; padding: 8px 10px; border: 1px solid #e2e8f0; border-top: 3px solid #cbd5e1; text-align: center; min-width: 0; }
+  .stat-tile.up    { border-top-color: #ef4444; }
+  .stat-tile.down  { border-top-color: #10b981; }
+  .stat-tile.warn  { border-top-color: #f59e0b; background: #fffbeb; }
+  .st-label { font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; margin-bottom: 3px; }
+  .st-val { font-size: 15px; font-weight: 700; color: #0f172a; letter-spacing: -0.2px; }
+  .st-sub { font-size: 10px; font-weight: 600; margin-top: 2px; }
+  .st-sub.pos { color: #047857; } .st-sub.neg { color: #b91c1c; } .st-sub.warn { color: #b45309; } .st-sub.flat { color: #64748b; }
+
+  /* PHONE SUMMARY */
+  .phone-summary { background: #ffffff; color: #0f172a; padding: 18px 20px; border-radius: 0 0 14px 14px; border-left: 6px solid #b91c1c; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; margin-bottom: 18px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.75; box-shadow: 0 4px 12px rgba(15,23,42,0.06); }
+  .ps-title { font-size: 10px; color: #b91c1c; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; font-family: -apple-system, sans-serif; }
+  .phone-summary .ps-row { padding: 2px 0; color: #1e293b; }
+  .phone-summary .ps-em { color: #b91c1c; font-weight: 700; }
+  .phone-summary .ps-warn { color: #b45309; font-weight: 600; }
+  .phone-summary .ps-pos { color: #047857; font-weight: 600; }
+  .phone-summary .ps-neg { color: #b91c1c; font-weight: 600; }
+
+  /* CARDS */
+  .card { background: linear-gradient(180deg, #ffffff 0%, #fdfdfe 100%); border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(13,27,42,0.06), 0 1px 2px rgba(13,27,42,0.04); border-left: 4px solid #4cc9f0; }
+  .card h2 { margin: 0 0 14px 0; font-size: 17px; color: #0d1b2a; letter-spacing: -0.1px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .card h2 .h2-badge { display: inline-block; width: 8px; height: 8px; background: #4cc9f0; border-radius: 50%; box-shadow: 0 0 0 3px rgba(76,201,240,0.18); }
+  .card.orange { border-left-color: #f4a261; } .card.orange h2 .h2-badge { background: #f4a261; box-shadow: 0 0 0 3px rgba(244,162,97,0.18); }
+  .card.blue { border-left-color: #4361ee; } .card.blue h2 .h2-badge { background: #4361ee; box-shadow: 0 0 0 3px rgba(67,97,238,0.18); }
+  .card.yellow { border-left-color: #e9c46a; } .card.yellow h2 .h2-badge { background: #e9c46a; box-shadow: 0 0 0 3px rgba(233,196,106,0.18); }
+  .card.purple { border-left-color: #7b2cbf; } .card.purple h2 .h2-badge { background: #7b2cbf; box-shadow: 0 0 0 3px rgba(123,44,191,0.18); }
+  .card.green { border-left-color: #2a9d8f; } .card.green h2 .h2-badge { background: #2a9d8f; box-shadow: 0 0 0 3px rgba(42,157,143,0.18); }
+  .card.red { border-left-color: #e63946; } .card.red h2 .h2-badge { background: #e63946; box-shadow: 0 0 0 3px rgba(230,57,70,0.18); }
+  ul.tight { margin: 6px 0; padding-left: 20px; } ul.tight li { margin-bottom: 9px; line-height: 1.55; }
+
+  /* GRIDS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .grid-10 { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; }
+
+  /* INDEX TILES */
+  .idx-tile { background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%); border-radius: 10px; padding: 12px 14px; text-align: center; border: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+  .idx-tile .label { font-size: 10.5px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; }
+  .idx-tile .price { font-size: 19px; font-weight: 700; color: #0d1b2a; margin: 6px 0 3px; letter-spacing: -0.3px; }
+  .idx-tile .chg { font-size: 12px; font-weight: 600; }
+  .pos { color: #2a9d8f; } .neg { color: #e63946; } .flat { color: #6b7280; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table th, table td { text-align: left; padding: 8px 9px; border-bottom: 1px solid #eef0f3; }
+  table th { background: linear-gradient(180deg, #f7f8fa 0%, #f0f2f6 100%); font-size: 10.5px; text-transform: uppercase; color: #5b6675; letter-spacing: 0.6px; font-weight: 700; }
+  tr.up td { background: #fef5f5; } tr.down td { background: #f0fdf4; }
+  tr.usd-strong td { background: #fef5f5; } tr.usd-weak td { background: #f0fdf4; }
+
+  /* SECTOR HEATMAP */
+  .sector-cell { padding: 11px 4px; border-radius: 8px; text-align: center; font-size: 10.5px; font-weight: 700; color: #fff; letter-spacing: 0.2px; box-shadow: inset 0 -2px 4px rgba(0,0,0,0.08); }
+  .sec-pos { background: linear-gradient(180deg, #34b39d 0%, #2a9d8f 100%); }
+  .sec-soft { background: linear-gradient(180deg, #f6b06b 0%, #f4a261 100%); }
+  .sec-neg { background: linear-gradient(180deg, #ef4858 0%, #e63946 100%); }
+
+  /* DEPTH BULLETS */
+  .depth-bullet { background: linear-gradient(135deg, #f9fafb 0%, #f3f5f9 100%); border-left: 3px solid #4cc9f0; padding: 12px 14px 12px 48px; margin: 10px 0; border-radius: 0 8px 8px 0; position: relative; }
+  .depth-bullet .num { position: absolute; left: 12px; top: 12px; width: 26px; height: 26px; background: #0d1b2a; color: #4cc9f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12.5px; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+  .depth-bullet .priced { display: block; margin-top: 8px; font-size: 12.5px; color: #475569; padding-top: 8px; border-top: 1px dashed #cbd5e1; }
+  .depth-bullet .priced::before { content: "What's priced now → "; color: #0d1b2a; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* MOVER CARDS */
+  .mover-card { background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%); border-radius: 10px; padding: 12px 14px; border: 1px solid #e5e7eb; }
+  .mover-card .row1 { display: flex; justify-content: space-between; align-items: center; }
+  .mover-card .tk { font-weight: 700; font-size: 14px; color: #0d1b2a; }
+  .mover-card .pct { font-weight: 700; font-size: 14px; }
+  .mover-card .note { font-size: 12px; color: #4b5563; margin-top: 6px; line-height: 1.5; }
+
+  /* KEY LEVELS */
+  .key-levels { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fde68a; border-radius: 8px; padding: 10px 14px; font-size: 12.5px; margin-top: 12px; color: #78350f; }
+  .key-levels::before { content: "KEY LEVELS"; display: block; font-size: 10px; color: #92400e; font-weight: 700; letter-spacing: 0.6px; margin-bottom: 4px; }
+  .key-levels b { color: #92400e; }
+
+  /* SECTOR SPOTLIGHTS */
+  .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .spotlight-sec { background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%); border-radius: 10px; padding: 14px 16px; border: 1px solid #e0e7ff; border-top: 4px solid #6366f1; }
+  .spotlight-sec.semis { border-top-color: #0ea5e9; }
+  .spotlight-sec.china-tech { border-top-color: #b91c1c; }
+  .spotlight-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #eef0f3; }
+  .spotlight-icon { font-size: 18px; }
+  .spotlight-name { font-size: 13px; font-weight: 800; color: #0f172a; }
+  .spotlight-tag { font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 8px; letter-spacing: 0.4px; text-transform: uppercase; margin-left: auto; }
+  .spotlight-sec.semis .spotlight-tag { color: #0369a1; background: rgba(14,165,233,0.1); }
+  .spotlight-sec.china-tech .spotlight-tag { color: #7f1d1d; background: rgba(185,28,28,0.1); }
+  .spotlight-news { background: #f8fafc; border-radius: 8px; padding: 11px 12px; margin-bottom: 10px; border-left: 3px solid #6366f1; }
+  .spotlight-sec.semis .spotlight-news { border-left-color: #0ea5e9; }
+  .spotlight-sec.china-tech .spotlight-news { border-left-color: #b91c1c; }
+  .spotlight-news:last-child { margin-bottom: 0; }
+  .news-headline { font-weight: 700; font-size: 13px; color: #0f172a; margin-bottom: 6px; line-height: 1.4; }
+  .news-body { font-size: 12.5px; color: #334155; line-height: 1.55; margin-bottom: 8px; }
+  .news-impl { background: rgba(99,102,241,0.07); border-radius: 6px; padding: 7px 10px; font-size: 11.5px; display: flex; gap: 8px; align-items: flex-start; }
+  .spotlight-sec.semis .news-impl { background: rgba(14,165,233,0.08); }
+  .spotlight-sec.china-tech .news-impl { background: rgba(185,28,28,0.06); }
+  .impl-tag { font-size: 8.5px; font-weight: 800; padding: 3px 7px; border-radius: 8px; letter-spacing: 0.6px; white-space: nowrap; flex-shrink: 0; margin-top: 1px; text-transform: uppercase; }
+  .spotlight-sec.semis .impl-tag { color: #0c4a6e; background: rgba(14,165,233,0.18); }
+  .spotlight-sec.china-tech .impl-tag { color: #7f1d1d; background: rgba(185,28,28,0.15); }
+  .impl-text { color: #1e293b; line-height: 1.5; flex: 1; }
+
+  /* AGENDA */
+  .agenda { display: flex; flex-direction: column; gap: 4px; }
+  .agenda-day { display: flex; gap: 14px; align-items: stretch; padding: 10px 0; border-bottom: 1px solid #eef0f3; }
+  .agenda-day:last-of-type { border-bottom: none; }
+  .agenda-date { background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: #fff; border-radius: 10px; padding: 8px 4px 6px; min-width: 56px; text-align: center; flex-shrink: 0; }
+  .agenda-date.today { background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%); box-shadow: 0 2px 8px rgba(185,28,28,0.3); }
+  .agenda-dow { font-size: 9.5px; color: #fda4af; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+  .agenda-date.today .agenda-dow { color: #fff; }
+  .agenda-dom { font-size: 22px; font-weight: 800; line-height: 1.05; margin: 3px 0 1px; letter-spacing: -0.5px; }
+  .agenda-mon { font-size: 9px; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+  .agenda-date.today .agenda-mon { color: #fecaca; }
+  .agenda-events { flex: 1; display: flex; flex-direction: column; gap: 5px; justify-content: center; min-width: 0; }
+  .agenda-event { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 13px; }
+  .agenda-time { font-size: 10.5px; font-weight: 700; color: #b91c1c; background: rgba(185,28,28,0.08); padding: 4px 9px; border-radius: 12px; letter-spacing: 0.5px; min-width: 64px; text-align: center; flex-shrink: 0; margin-top: 1px; }
+  .agenda-name { color: #1d2733; line-height: 1.45; flex: 1; }
+  .agenda-event.star { background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%); border-radius: 8px; padding: 7px 10px; margin: 2px 0; border-left: 3px solid #f59e0b; }
+  .agenda-event.star .agenda-time { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; }
+  .agenda-event.star .agenda-name { font-weight: 700; color: #78350f; }
+
+  /* SCENARIOS */
+  .scenario { padding: 12px 14px; border-radius: 10px; margin-bottom: 10px; }
+  .scn-bull { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-left: 4px solid #10b981; }
+  .scn-base { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); border-left: 4px solid #6b7280; }
+  .scn-bear { background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border-left: 4px solid #ef4444; }
+
+  /* INTERVIEW PREP */
+  .ip-card { background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%); border: 1px solid #fecaca; border-left: 4px solid #b91c1c; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; box-shadow: 0 1px 3px rgba(13,27,42,0.04); }
+  .ip-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #fee2e2; }
+  .ip-num { display: inline-block; background: #7f1d1d; color: #fecaca; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 12px; margin-right: 10px; flex-shrink: 0; }
+  .ip-q-text { font-weight: 700; font-size: 14px; color: #0f172a; flex: 1; }
+  .ip-tag { display: inline-block; font-size: 9.5px; font-weight: 700; color: #b91c1c; background: rgba(185,28,28,0.1); padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 8px; }
+  .ip-ans { font-size: 13px; color: #334155; line-height: 1.65; }
+  .ip-ans p { margin: 0 0 8px 0; } .ip-ans p:last-child { margin-bottom: 0; }
+  .ip-ans .pivot { margin-top: 10px; padding: 8px 12px; background: rgba(185,28,28,0.06); border-left: 2px solid #b91c1c; border-radius: 0 6px 6px 0; font-style: italic; color: #1e293b; font-size: 12.5px; }
+  .ip-ans .pivot::before { content: "View → "; font-weight: 700; font-style: normal; color: #7f1d1d; }
+  .ip-ans b { color: #0f172a; }
+  .ip-data { margin-top: 10px; padding-top: 8px; border-top: 1px dashed #fecaca; font-size: 11.5px; color: #6b7280; }
+  .ip-data b { color: #475569; }
+
+  /* FOOTER */
+  .footer { text-align: center; color: #6b7280; font-size: 11px; padding: 16px 0 4px; line-height: 1.6; }
+  .footer .badge { display: inline-block; padding: 2px 8px; background: #fef2f2; color: #b91c1c; border-radius: 10px; font-size: 9.5px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; margin-right: 6px; }
+
+  @media (max-width: 640px) {
+    body { padding: 10px; font-size: 14px; }
+    header.dark { padding: 18px 16px; border-radius: 12px 12px 0 0; }
+    header.dark h1 { font-size: 20px; }
+    .stats-panel { padding: 12px 14px; }
+    .stats-row.row-indices { grid-template-columns: 1fr 1fr; }
+    .stats-row.row-yields { grid-template-columns: 1fr 1fr; }
+    .stats-row.row-fx-cmd { grid-template-columns: 1fr 1fr 1fr; }
+    .stat-tile { padding: 7px 8px; } .st-val { font-size: 14px; }
+    .spotlight-grid { grid-template-columns: 1fr; }
+    .phone-summary { padding: 16px 14px; font-size: 12.5px; line-height: 1.7; border-radius: 0 0 12px 12px; }
+    .card { padding: 14px 14px; } .card h2 { font-size: 15px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-10 { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 12px; } table th, table td { padding: 6px 6px; }
+    .idx-tile .price { font-size: 16px; }
+    .sector-cell { font-size: 10px; padding: 9px 3px; }
+    .depth-bullet { padding-left: 44px; }
+    .depth-bullet .num { width: 24px; height: 24px; font-size: 11px; left: 10px; top: 12px; }
+    .ip-card { padding: 14px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="dark">
+    <div class="eyebrow">APAC Afternoon Wrap · Interview Prep Edition</div>
+    <h1>🌏 Tuesday, May 19, 2026 — KOSPI Tech Rout, HSI Steady, PBOC Defends Yuan</h1>
+    <div class="sub">Delivered 4pm China time · Just after APAC cash close · Carson · ccarson.feng@gmail.com</div>
+    <div class="tags">
+      <span class="tag">Rates/FX/EM</span>
+      <span class="tag">China + HK</span>
+      <span class="tag">Japan/Korea</span>
+      <span class="tag">Equity Research</span>
+    </div>
+  </header>
+
+  <!-- 3-ROW STATS PANEL -->
+  <div class="stats-panel">
+    <div class="stats-row row-indices">
+      <div class="stats-row-label">APAC Equity Indices — Tuesday Close</div>
+      <div class="stat-tile up"><div class="st-label">Shanghai SSE</div><div class="st-val">3,386</div><div class="st-sub neg">−0.52% (CSI 300)</div></div>
+      <div class="stat-tile down"><div class="st-label">Hang Seng</div><div class="st-val">23,452</div><div class="st-sub pos">+0.41%</div></div>
+      <div class="stat-tile up"><div class="st-label">Nikkei 225</div><div class="st-val">~60,650</div><div class="st-sub neg">~−0.3% est.</div></div>
+      <div class="stat-tile up"><div class="st-label">KOSPI</div><div class="st-val">7,282</div><div class="st-sub neg">−3.12% · semi rout</div></div>
+    </div>
+
+    <div class="stats-row row-yields">
+      <div class="stats-row-label">APAC Yields — 10Y Sovereign</div>
+      <div class="stat-tile down"><div class="st-label">China CGB</div><div class="st-val">1.75%</div><div class="st-sub pos">−1 bp</div></div>
+      <div class="stat-tile up"><div class="st-label">Japan JGB</div><div class="st-val">1.55%</div><div class="st-sub neg">+2 bps</div></div>
+      <div class="stat-tile up"><div class="st-label">Korea KTB</div><div class="st-val">3.42%</div><div class="st-sub neg">+3 bps</div></div>
+      <div class="stat-tile up"><div class="st-label">Australia ACGB</div><div class="st-val">4.48%</div><div class="st-sub neg">+1 bp</div></div>
+    </div>
+
+    <div class="stats-row row-fx-cmd">
+      <div class="stats-row-label">FX & Commodities — Tuesday Close (APAC)</div>
+      <div class="stat-tile warn"><div class="st-label">USD/JPY</div><div class="st-val">158.95</div><div class="st-sub warn">⚠ near 159 · MoF HIGH</div></div>
+      <div class="stat-tile down"><div class="st-label">USD/CNH</div><div class="st-val">7.275</div><div class="st-sub pos">−0.2%</div></div>
+      <div class="stat-tile down"><div class="st-label">USD/CNY Fix</div><div class="st-val">6.8375</div><div class="st-sub pos">firmest since Mar'23</div></div>
+      <div class="stat-tile up"><div class="st-label">USD/KRW</div><div class="st-val">1,438</div><div class="st-sub neg">+0.6%</div></div>
+      <div class="stat-tile down"><div class="st-label">WTI</div><div class="st-val">$103.50</div><div class="st-sub pos">−1.5% (Trump delay)</div></div>
+      <div class="stat-tile down"><div class="st-label">Gold</div><div class="st-val">$4,610</div><div class="st-sub pos">+0.9%</div></div>
+    </div>
+  </div>
+
+  <!-- PHONE SUMMARY -->
+  <div class="phone-summary">
+    <div class="ps-title">📱 Phone Summary — 20-second read</div>
+    <div class="ps-row">📊 <span class="ps-em">SSE</span> <span class="ps-neg">−0.52%</span> · <span class="ps-em">HSI</span> <span class="ps-pos">+0.41%</span> · <span class="ps-em">Nikkei</span> ~<span class="ps-neg">−0.3%</span> · <span class="ps-em">KOSPI</span> <span class="ps-neg">−3.12%</span> (semis rout)</div>
+    <div class="ps-row">🇨🇳 <span class="ps-em">PBOC fix:</span> 6.8375 — <span class="ps-pos">firmest since Mar '23</span>, +466 pips stronger than Reuters survey (defensive)</div>
+    <div class="ps-row">🏦 <span class="ps-em">CGB</span> 1.75% (−1bp) · <span class="ps-em">JGB</span> 1.55% (+2bps) · BOJ intervention risk: <span class="ps-warn">HIGH</span></div>
+    <div class="ps-row">💱 <span class="ps-em">USD/JPY</span> 158.95 (looked at 159) · <span class="ps-em">USD/CNH</span> 7.275 · <span class="ps-em">USD/KRW</span> 1,438 (+0.6%)</div>
+    <div class="ps-row">⚡ <span class="ps-em">Theme:</span> KOSPI semis rout on NVDA-pre-print derisk; HSI shrugs off China softness on Iran de-escalation; PBOC firmest CNY fix in 3+ years</div>
+    <div class="ps-row">🏷️ <span class="ps-em">Sectors:</span> Best <span class="ps-pos">ASX Materials +2%</span> · <span class="ps-pos">HK Tech +0.8%</span> · Worst <span class="ps-neg">KOSPI Semis −5%</span></div>
+    <div class="ps-row">💼 <span class="ps-em">Deal:</span> Bank of Communications $4.5bn AT1 dollar bond — books 4.5x oversubscribed, GS/HSBC/MS lead</div>
+    <div class="ps-row">💡 <span class="ps-em">TRADE:</span> Short USD/JPY 158.50 · target 153 · stop 160.30 · ahead of likely MoF intervention</div>
+    <div class="ps-row">👀 <span class="ps-em">Tomorrow watch:</span> NVDA earnings Wed AMC (24:00 China Thu) · BOJ minutes · 20Y UST auction</div>
+  </div>
+
+  <!-- 60-SECOND BRIEF -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>⚡ 60-Second Brief</h2>
+    <ul class="tight">
+      <li><b>Theme:</b> Mixed APAC tape — KOSPI got hammered −3.12% (semis pre-NVDA derisk + Samsung/SK Hynix weakness), HSI held +0.41% as Trump's announced delay of Iran strike eased oil and helped HK risk appetite. Mainland CSI 300 −0.52% on soft April economic data still weighing. PBOC's most defensive yuan fix since March 2023 was the bigger structural story.</li>
+      <li><b>Most notable price move:</b> KOSPI −3.12% — the worst APAC index day in 6 weeks, driven by Samsung/SK Hynix selling off ~5% each as global semi names derisk into NVDA Wednesday print. KOSDAQ down even more at −3.32%.</li>
+      <li><b>Top event:</b> PBOC sets USD/CNY at 6.8375 vs Reuters survey 6.7909 — a 466-pip stronger-than-expected fix, the firmest CNY midpoint since 24 March 2023. Beijing is now actively leaning against depreciation pressure rather than letting the yuan drift weaker.</li>
+    </ul>
+  </div>
+
+  <!-- MACRO EVENTS -->
+  <div class="card orange">
+    <h2><span class="h2-badge"></span>⚡ Macro Events — Last 24h</h2>
+    <ul class="tight">
+      <li><b>Trump postpones Iran military strike.</b> Overnight reports indicate the planned strike has been delayed; oil prices eased ~1.5% (WTI to $103.50, Brent to ~$100.80). Risk-on bid for HK/HSI; Materials sectors across APAC outperformed (ASX +1.05%).</li>
+      <li><b>PBOC sets USD/CNY at 6.8375 — firmest since March 2023.</b> +466 pips stronger than Reuters survey of 6.7909. Coincides with broader USD recovery — Beijing pushing back hard against depreciation pressure. Onshore yuan rallied 0.3% post-fix.</li>
+      <li><b>Korea semi cycle worries reignite.</b> Pre-NVDA earnings derisk dragged Samsung Electronics and SK Hynix down ~5% each; HBM3E supply tightness narrative diverged from broader chip cycle anxiety. KOSPI's worst session in 6 weeks.</li>
+      <li><b>China April activity data still weighing.</b> Last week's retail sales miss + property weakness continues to anchor onshore sentiment. CSI 300 lower for 3rd consecutive session despite the Iran de-escalation bid.</li>
+      <li><b>BOJ Ueda speech overnight.</b> Reiterated "data-dependent normalization" — no acceleration signal, leaving USD/JPY free to test 159. Risk reversals continue to flip toward JPY calls; intervention risk HIGH ahead of 159.30-160 zone.</li>
+    </ul>
+  </div>
+
+  <!-- MARKET NEWS -->
+  <div class="card blue">
+    <h2><span class="h2-badge"></span>📰 Market News — Last 24h</h2>
+    <ul class="tight">
+      <li><b>Samsung Electronics −5.2%, SK Hynix −4.8%</b> — pre-NVDA-print derisk, HBM3E demand visibility being repriced. KOSPI semi sub-index down ~5%, dragging the headline.</li>
+      <li><b>TSMC −2.1% (TWSE)</b> — semis weakness spilled to Taiwan; foundry capex narrative on watch into NVDA print.</li>
+      <li><b>Tencent +1.6%, Alibaba +2.1% (HK)</b> — China internet caught a bid on Iran de-escalation + PBOC defending yuan. HSTECH up ~0.8%.</li>
+      <li><b>BHP +2.4%, Rio Tinto +1.9% (ASX)</b> — materials rally on iron ore +3% intraday, supported by easing oil + PBOC stimulus speculation.</li>
+      <li><b>China property still bleeding</b> — HS Mainland Properties Index −1.1%; Vanke onshore bonds traded at distressed levels. No major policy catalyst expected this week.</li>
+    </ul>
+  </div>
+
+  <!-- KEY THEMES -->
+  <div class="card yellow">
+    <h2><span class="h2-badge"></span>📌 Key Themes</h2>
+    <ul class="tight">
+      <li><b>PBOC pivots from drift to defend.</b> 466-pip stronger fix = explicit signal that 6.85 is the line in the sand. Watch CNH/CNY spread (currently ~80 pips) — if it widens beyond 200 pips, expect verbal escalation + possibly forward sales by state banks.</li>
+      <li><b>NVDA-as-APAC-macro.</b> Wed AMC print is functionally a sector test for Samsung, SK Hynix, TSMC. Q2 guide above $87B = relief rally across the HBM/foundry stack; below $85B extends the KOSPI rout to Taiwan and Japan exporters.</li>
+      <li><b>Yen carry on borrowed time.</b> USD/JPY at 158.95 looked at 159 intraday; MoF rhetoric escalated overnight ("watching with concern"). 159.30-160 is the intervention zone — risk asymmetric.</li>
+      <li><b>HK/A-share divergence widening.</b> HSI +0.41% vs CSI 300 −0.52% = 4th consecutive session of HK outperforming mainland. Southbound Stock Connect inflows ~HK$8bn — domestic Chinese savers preferring HK-listed China names over A-shares.</li>
+    </ul>
+  </div>
+
+  <!-- TIER 1 INDICES -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📈 APAC Tier 1 — China · HK · Japan · Korea</h2>
+    <div class="grid-4">
+      <div class="idx-tile"><div class="label">Shanghai SSE Comp</div><div class="price">3,386</div><div class="chg neg">CSI 300 −0.52%</div></div>
+      <div class="idx-tile"><div class="label">Hang Seng</div><div class="price">23,452</div><div class="chg pos">+0.41%</div></div>
+      <div class="idx-tile"><div class="label">Nikkei 225</div><div class="price">~60,650</div><div class="chg flat">~−0.3% est.</div></div>
+      <div class="idx-tile"><div class="label">KOSPI</div><div class="price">7,282</div><div class="chg neg">−3.12% (semi rout)</div></div>
+    </div>
+    <div style="margin-top: 12px; font-size: 12.5px; color: #475569; line-height: 1.55;">
+      <b>SSE/CSI 300:</b> Mainland soft as April data continues to weigh; PBOC fix the bigger story.<br>
+      <b>HSI:</b> Outperformed Asia on Iran de-escalation + tech bid (Tencent/BABA up).<br>
+      <b>Nikkei:</b> Range-bound; yen weakness helps exporters but BOJ caution caps upside.<br>
+      <b>KOSPI:</b> Worst day in 6 weeks — pre-NVDA semi derisk concentrated here.
+    </div>
+  </div>
+
+  <!-- TIER 2 -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📊 APAC Tier 2 — ASX · Taiwan · India</h2>
+    <table>
+      <thead><tr><th>Index</th><th>Close</th><th>% Chg</th><th>Driver</th></tr></thead>
+      <tbody>
+        <tr class="down"><td>ASX 200</td><td>~8,620</td><td class="pos">+1.05%</td><td>Materials/energy rally on commodities</td></tr>
+        <tr class="up"><td>TWSE</td><td>~22,150</td><td class="neg">~−1.8% est.</td><td>TSMC −2.1% on semi derisk</td></tr>
+        <tr class="down"><td>Sensex/Nifty 50</td><td>—</td><td class="pos">+0.44%</td><td>Defensive bid, RBI cautious</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- APAC SECTOR HEATMAP -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📊 APAC Sector Heatmap — Tuesday Close</h2>
+    <div class="grid-10">
+      <div class="sector-cell sec-pos">ASX Materials<br>+2.4%</div>
+      <div class="sector-cell sec-pos">HSTECH<br>+0.8%</div>
+      <div class="sector-cell sec-pos">HS Fin<br>+0.5%</div>
+      <div class="sector-cell sec-soft">CSI 300 Cons<br>+0.1%</div>
+      <div class="sector-cell sec-soft">TOPIX Banks<br>−0.2%</div>
+      <div class="sector-cell sec-soft">HS Health<br>−0.4%</div>
+      <div class="sector-cell sec-soft">TOPIX Autos<br>−0.6%</div>
+      <div class="sector-cell sec-neg">HS Mainland Prop<br>−1.1%</div>
+      <div class="sector-cell sec-neg">TWSE Semis<br>−2.5%</div>
+      <div class="sector-cell sec-neg">KOSPI Semis<br>−5.0%</div>
+    </div>
+    <div style="margin-top: 12px; font-size: 13px;">
+      <b>Rotation read:</b> Two distinct trades. <b>(1) Commodities/defensives bid</b> on Iran de-escalation — ASX Materials +2.4%, HSTECH +0.8%, HS Financials +0.5%. <b>(2) Semis got crushed</b> ahead of NVDA print — KOSPI Semis −5%, TWSE Semis −2.5%. China property still bleeding −1.1%. The KOSPI/TWSE semi weakness is the standout — global derisk concentrated here because the names are most liquid and most sensitive to hyperscaler capex revisions.
+    </div>
+  </div>
+
+  <!-- WHAT MOVED EQUITIES -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>⚡ What Moved APAC Equities — Depth + Positioning</h2>
+    <div class="depth-bullet">
+      <div class="num">1</div>
+      <b>KOSPI −3.12% — concentrated pre-NVDA semi derisk.</b> Samsung Electronics −5.2% and SK Hynix −4.8% together account for ~60% of the KOSPI move. The trigger isn't fundamental — it's positioning: long-only Asia EM funds had crowded into HBM3E names through Q1, and they're trimming risk into a binary NVDA event.
+      <span class="priced">KOSPI tech weight = 40%+; Samsung+SKH alone = 25% of index. Watch USD/KRW 1,440 — break above signals foreign equity outflows accelerating. Pair trade: long FXI / short EWY for next 2 weeks.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>HSI shrugs off mainland softness on Iran-delay bid.</b> Trump's postponed Iran strike eased oil pressure; HK risk assets bid disproportionately versus mainland because southbound flows finally turned positive (HK$8bn inflow). HSTECH +0.8%, HS Financials +0.5%.
+      <span class="priced">HK-A spread widened to 4th session — HSI outperforming CSI 300 by ~150bps in May. Long HSCEI / short CSI 300 pair gaining traction in regional books.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>PBOC defensive fix is the bigger structural story.</b> 6.8375 = +466 pips stronger than Reuters survey (largest deviation in 3+ months). This signals Beijing's tolerance for further CNY depreciation has bottomed out around 7.30 on the offshore.
+      <span class="priced">CNH 1M implied vol still at multi-month lows (~3.5%) — options market hasn't fully repriced PBOC's tone shift. Cheap to own optionality on a band-widening surprise.</span>
+    </div>
+    <div class="key-levels"><b>HSI:</b> 23,300 support; 23,700 resistance. <b>KOSPI:</b> 7,200 critical; 7,400 to repair. <b>SSE:</b> 3,380 support. <b>USD/CNH:</b> 7.30 PBOC line.</div>
+  </div>
+
+  <!-- SINGLE NAME MOVERS -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🏷️ Single-Name Movers</h2>
+    <div class="grid-2">
+      <div class="mover-card"><div class="row1"><span class="tk">Samsung Electronics (KS)</span><span class="pct neg">−5.2%</span></div><div class="note">Pre-NVDA semi derisk; HBM3E demand visibility being repriced. Single biggest drag on KOSPI today.</div></div>
+      <div class="mover-card"><div class="row1"><span class="tk">SK Hynix (KS)</span><span class="pct neg">−4.8%</span></div><div class="note">Same NVDA-pre-print theme; foreign equity outflows of ~$200m today alone per local press estimates.</div></div>
+      <div class="mover-card"><div class="row1"><span class="tk">Tencent (HK)</span><span class="pct pos">+1.6%</span></div><div class="note">Bid on Iran de-escalation + PBOC defending yuan = better China risk tone; HSTECH leader.</div></div>
+      <div class="mover-card"><div class="row1"><span class="tk">BHP / Rio Tinto (ASX)</span><span class="pct pos">+2.4% / +1.9%</span></div><div class="note">Iron ore +3% on PBOC stimulus speculation + Iran ease; Materials sector leadership.</div></div>
+    </div>
+  </div>
+
+  <!-- CHINA MACRO STACK -->
+  <div class="card red">
+    <h2><span class="h2-badge"></span>🇨🇳 China Macro Stack</h2>
+    <ul class="tight">
+      <li><b>PBOC daily fix:</b> USD/CNY 6.8375 vs Reuters survey 6.7909 — <b>+466 pips stronger</b>, firmest CNY midpoint since 24 March 2023. Defensive policy signal.</li>
+      <li><b>CNH/CNY spread:</b> ~80 pips (USD/CNH 7.275 vs onshore 7.267) — contained for now; widening above 200 pips = real outflow stress.</li>
+      <li><b>PBOC operations:</b> CNY 245bn 7-day reverse repo net injection — small but supportive into month-end liquidity.</li>
+      <li><b>TSF/M2:</b> Not released today; April data last week showed continued credit tightening (TSF +2.3% YoY, weakest since 2020).</li>
+      <li><b>Property:</b> HS Mainland Properties −1.1% · Vanke USD bonds at distressed levels · No major policy support expected this week.</li>
+      <li><b>Key headline:</b> Politburo readout discussed at SCO summit — "high-quality development" rhetoric, no fresh stimulus announcement.</li>
+    </ul>
+  </div>
+
+  <!-- APAC RATES -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🏦 APAC Rates</h2>
+    <table>
+      <thead><tr><th>Country</th><th>10Y Yield</th><th>Δ Tuesday</th><th>Driver</th></tr></thead>
+      <tbody>
+        <tr class="down"><td>China CGB</td><td>1.75%</td><td class="pos">−1 bp</td><td>Defensive bid; PBOC supportive</td></tr>
+        <tr class="up"><td>Japan JGB</td><td>1.55%</td><td class="neg">+2 bps</td><td>Yen weakness + BOJ data-dependent stance</td></tr>
+        <tr class="up"><td>Korea KTB</td><td>3.42%</td><td class="neg">+3 bps</td><td>USD/KRW pressure + foreign outflows</td></tr>
+        <tr class="up"><td>Australia ACGB</td><td>4.48%</td><td class="neg">+1 bp</td><td>RBA cut path neutral; tracking UST</td></tr>
+        <tr class="up"><td>India GSec</td><td>6.85%</td><td class="neg">+2 bps</td><td>RBI cautious; tracking oil + USD</td></tr>
+      </tbody>
+    </table>
+    <div class="depth-bullet" style="margin-top: 12px;">
+      <div class="num">1</div>
+      <b>JGB curve steepening on BOJ caution.</b> 10Y JGB +2bps to 1.55% as Ueda overnight reiterated "data-dependent" — no acceleration signal. 2s10s now +85bps, widest in 3 months.
+      <span class="priced">BOJ June 13-14 meeting is the next pivot. Options price 35% probability of YCC adjustment language; if delivered, JGB sells off another 10-15bps.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>KTB +3bps as Korea capital flow pressure intensifies.</b> USD/KRW +0.6% to 1,438 with semi outflows ~$200m. BoK may need to talk tougher on FX defense if 1,450 breaks.
+      <span class="priced">KTB-UST spread now −116bps (UST 4.60% vs KTB 3.42%) — narrowest in 18 months. Foreign holdings of KTB at risk of further outflow.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>CGB grinding lower as PBOC tilts dovish.</b> Reverse repo net injection + record-firm CNY fix = unusual combo signaling Beijing wants stronger currency + accommodative liquidity. CGB demand structurally elevated by domestic asset reallocation.
+      <span class="priced">10Y CGB heading toward 1.70% support; below that opens 1.60-1.65% region. Long CGB / short ACGB pair the cleanest APAC rates trade.</span>
+    </div>
+    <div class="key-levels"><b>JGB 10Y:</b> 1.50% support; 1.65% resistance. <b>KTB:</b> 3.50% breakout to watch. <b>CGB:</b> 1.70% support, 1.80% resistance.</div>
+  </div>
+
+  <!-- APAC FX -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>💱 APAC FX</h2>
+    <table>
+      <thead><tr><th>Pair</th><th>Level</th><th>Δ Tuesday</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="usd-strong"><td>USD/JPY</td><td>158.95</td><td class="neg">+0.3%</td><td><b>INTERVENTION RISK: HIGH</b> · looked at 159</td></tr>
+        <tr class="usd-weak"><td>USD/CNH</td><td>7.275</td><td class="pos">−0.2%</td><td>PBOC fix at 6.8375 — firmest since Mar '23</td></tr>
+        <tr class="usd-weak"><td>USD/CNY (fix)</td><td>6.8375</td><td class="pos">+466 pips vs survey</td><td>Defensive policy intent</td></tr>
+        <tr class="usd-strong"><td>USD/KRW</td><td>1,438</td><td class="neg">+0.6%</td><td>Foreign equity outflows; BoK on alert</td></tr>
+        <tr class="usd-strong"><td>AUD/USD</td><td>0.6485</td><td class="neg">−0.1%</td><td>Iron ore bid; rates spread narrowing</td></tr>
+        <tr class="usd-strong"><td>USD/INR</td><td>85.30</td><td class="neg">+0.1%</td><td>RBI defending; oil import drag</td></tr>
+        <tr class="usd-strong"><td>USD/SGD</td><td>1.348</td><td class="neg">+0.05%</td><td>MAS NEER band stable</td></tr>
+      </tbody>
+    </table>
+    <div class="depth-bullet" style="margin-top: 12px;">
+      <div class="num">1</div>
+      <b>USD/JPY looked at 159 — third time this month.</b> MoF rhetoric escalating; Suzuki and Kanda both made "watching with concern" comments overnight. April's $30bn intervention round started near similar levels.
+      <span class="priced">Options market: 1M risk reversals flipped further to JPY calls; intervention strike likely 159.30-159.80. Smart money sets USD/JPY shorts with stops above 160.50.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>PBOC's firmest fix in 3+ years sends a structural signal.</b> 6.8375 vs survey 6.7909 = +466 pips defensive. Coincides with state banks reportedly selling USD on offshore platforms.
+      <span class="priced">Onshore CNY rallied 0.3% post-fix. NDFs reduced bearish pricing — 1Y forward implies +1.2% CNY depreciation now (was +2.5% a month ago).</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>USD/KRW pushing 1,440 on equity outflows.</b> $200m+ foreign equity outflow today as KOSPI semi rout intensified. BoK has been quiet but tools are loaded.
+      <span class="priced">Options skew flipped to KRW-puts (USD/KRW calls) for the first time since February. 1,450 is the level where BoK historically gets verbal.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">4</div>
+      <b>AUD/USD muted despite iron ore +3%.</b> Commodity tailwind offset by narrowing rate differential (RBA on hold + UST yields higher). 0.6500 is the pivot.
+      <span class="priced">AUD/JPY surged on yen weakness — relative attractiveness of carry intact. Long AUD/JPY pair the cleanest cross-currency expression of "weak yen + risk-on commodities."</span>
+    </div>
+    <div class="key-levels"><b>USD/JPY:</b> 159.30 likely MoF trigger; 160 red line. <b>USD/CNH:</b> 7.30 PBOC line. <b>USD/KRW:</b> 1,450 BoK alert level. <b>AUD/USD:</b> 0.6500 pivot.</div>
+  </div>
+
+  <!-- CENTRAL BANK WATCH -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🏛️ APAC Central Bank Watch</h2>
+    <ul class="tight" style="font-size: 13px;">
+      <li><b>PBOC:</b> Stance — easing/defensive FX hybrid. Today: 466-pip stronger fix + CNY 245bn reverse repo injection. Signal: Defending 6.85 actively.</li>
+      <li><b>BOJ:</b> Next meeting June 13–14 · Rate 0.50% · No hike priced near-term · Yen intervention risk: <b>HIGH</b></li>
+      <li><b>BOK:</b> Next meeting May 23 · Base rate 2.50% · Hold widely expected; FX defense in focus if USD/KRW breaks 1,450</li>
+      <li><b>RBA:</b> Next meeting June 3 · Cash rate 3.60% · Pricing 60% probability of hold, 40% −25bps</li>
+      <li><b>RBI:</b> Next meeting June 6 · Repo 5.50% · Pricing one more cut by end-2026; oil-driven inflation a concern</li>
+    </ul>
+  </div>
+
+  <!-- VOL & RISK -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📊 Vol & Risk Tone</h2>
+    <ul class="tight" style="font-size: 13px;">
+      <li><b>VIX (latest US):</b> ~18.40 — calm-before-NVDA</li>
+      <li><b>iTraxx Asia ex-Japan IG:</b> 85 bps · HY ~340 bps — both 3-month tights</li>
+      <li><b>APAC tone:</b> Mixed — risk-on bid on Iran delay offset by KOSPI semi rout. Net flat positioning expected into NVDA print.</li>
+    </ul>
+  </div>
+
+  <!-- DEAL OF THE DAY -->
+  <div class="card green">
+    <h2><span class="h2-badge"></span>💼 Deal of the Day — APAC</h2>
+    <table>
+      <tbody>
+        <tr><td><b>Issuer</b></td><td>Bank of Communications Co. Ltd. (BoCom)</td></tr>
+        <tr><td><b>Type</b></td><td>AT1 (Additional Tier 1) USD perpetual</td></tr>
+        <tr><td><b>Size</b></td><td>$4.5 billion</td></tr>
+        <tr><td><b>Coupon / call</b></td><td>~7.25% reset off 5Y UST · 5NC perpetual structure</td></tr>
+        <tr><td><b>Books</b></td><td>4.5x oversubscribed — strongest demand for Chinese bank AT1 since 2024</td></tr>
+        <tr><td><b>Bookrunners</b></td><td>Goldman Sachs · HSBC · Morgan Stanley · BoCom International · Citi</td></tr>
+        <tr><td><b>Market read</b></td><td>4.5x book despite China property concerns = global investors still hungry for high-grade China financial paper. AT1 spread compression continues — China bank AT1 vs US bank AT1 now ~150bps wide (was 250bps in March).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TRADE IDEA -->
+  <div class="card red">
+    <h2><span class="h2-badge"></span>💡 Trade Idea of the Day — Short USD/JPY 158.50</h2>
+    <table>
+      <tbody>
+        <tr><td><b>Instrument</b></td><td>Short USD/JPY spot · alt: 1M 158/153 put spread</td></tr>
+        <tr><td><b>Entry</b></td><td>158.50–158.80 zone</td></tr>
+        <tr><td><b>Target</b></td><td>153.00 (3-month MoF-intervention snap-back precedent)</td></tr>
+        <tr><td><b>Stop</b></td><td>160.30 (above April peak)</td></tr>
+        <tr><td><b>Risk/Reward</b></td><td>~3:1</td></tr>
+        <tr><td><b>Thesis</b></td><td>Tested 159 today; MoF rhetoric escalated. 159.30-159.80 = likely intervention zone. April $30bn round triggered 4-yen snap. Risk-reversal flipped JPY-call positive.</td></tr>
+        <tr><td><b>Catalyst</b></td><td>MoF intervention; BOJ June 13-14 (potential YCC adjustment); US softer data softens DXY support</td></tr>
+        <tr><td><b>Invalidator</b></td><td>NVDA blowout Wed + Trump pushes Fed dovish + Iran escalates again — combo that re-loads dollar bid AND keeps yen as funding currency</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTOR SPOTLIGHTS -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🔬 Sector Spotlights — Semis + China Tech</h2>
+    <div class="spotlight-grid">
+
+      <div class="spotlight-sec semis">
+        <div class="spotlight-head">
+          <span class="spotlight-icon">💾</span>
+          <span class="spotlight-name">APAC Semiconductors</span>
+          <span class="spotlight-tag">SEMIS</span>
+        </div>
+        <div class="spotlight-news">
+          <div class="news-headline">Samsung −5.2%, SK Hynix −4.8% — KOSPI semi rout ahead of NVDA Wednesday print</div>
+          <div class="news-body">Foreign equity outflows ~$200m concentrated in HBM3E names; KOSPI semi sub-index −5%. TSMC sympathetically −2.1% on TWSE. The selling is positioning-driven (pre-event derisk), not fundamental — HBM3E supply tightness narrative remains intact per local supply-chain checks.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>Binary into NVDA:</b> Q2 guide &gt;$87B = relief rally lifts Samsung, SKH, TSMC, AVGO 3-5% in single session. Guide &lt;$85B extends KOSPI rout to Taiwan + drags Japan semis (Advantest, Tokyo Electron). Pair trade: long SOXX / short EWY ahead of binary event with defined R:R.</span>
+          </div>
+        </div>
+        <div class="spotlight-news">
+          <div class="news-headline">TSMC 3nm + 2nm capex visibility update — Arizona Phase 2 ahead of schedule</div>
+          <div class="news-body">Press reports indicate TSMC Arizona Phase 2 (2nm) production targets pulled forward by 6 months. Supports $42B FY26 capex guide. CoWoS advanced packaging supply remains the binding constraint for AI accelerators through 2027.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>Foundry duopoly thesis intact:</b> TSMC + Samsung Foundry capture 95%+ of leading-edge AI accelerator volume. ASML EUV/High-NA backlog supports the structural bull case. Watch CoWoS capacity guidance from TSMC at next earnings — every 10% expansion = ~$8-10B incremental revenue for AVGO/NVDA/AMD supply chain.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="spotlight-sec china-tech">
+        <div class="spotlight-head">
+          <span class="spotlight-icon">🐉</span>
+          <span class="spotlight-name">China Tech</span>
+          <span class="spotlight-tag">CHINA TECH</span>
+        </div>
+        <div class="spotlight-news">
+          <div class="news-headline">Tencent +1.6%, Alibaba +2.1% — HSTECH leading APAC on Iran-delay risk-on + PBOC defending yuan</div>
+          <div class="news-body">HSTECH +0.8% as the only major China tech-heavy index green today. Southbound Stock Connect inflows ~HK$8bn — domestic Chinese savers preferring HK-listed China tech over A-shares. Tencent at 5-month high on gaming approval visibility.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>HK-A divergence widening structurally.</b> HSI outperforming CSI 300 by ~150bps in May. The divergence reflects (1) southbound flow as China savers diversify FX, (2) PBOC's yuan defense reducing offshore Chinese asset risk premium, (3) HK valuations cheaper than A-shares on most names. Long HSCEI / short CSI 300 pair gaining traction.</span>
+          </div>
+        </div>
+        <div class="spotlight-news">
+          <div class="news-headline">BYD vs Tesla Model 3/Y price competition intensifies — May volume data leaks</div>
+          <div class="news-body">Local Chinese reports indicate BYD May NEV unit sales tracking +25% MoM; Tesla China May tracking flat. BYD's Han L sedan undercut Tesla Model 3 by ~15% on the trim-equivalent basis. BYD HK shares +1.8% today; Tesla US implied open lower.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>China auto consolidation accelerating around BYD.</b> Domestic NEV market share concentration: BYD 32% → likely 35%+ by year-end. Tier-2 brands (Nio, XPeng, Li Auto) margin-pressured; consolidation/exit cycle 2026-27. Long BYD / short global auto OEMs facing China rivalry = thematic pair.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CROSS-ASSET SCENARIOS -->
+  <div class="card purple">
+    <h2><span class="h2-badge"></span>🎯 Cross-Asset Scenarios — Week Ahead (APAC focus)</h2>
+    <div class="scenario scn-bull">
+      <b>🐂 BULL (~25%)</b> — NVDA Q2 guide above $90B + Iran de-escalation continues. KOSPI Semis rally +5% (Samsung, SKH bounce); HSI to 24,000; USD/JPY drops to 156 (no intervention needed); CNH to 7.20 on PBOC defense + risk-on. Best APAC trades: long EWY (Korea bounce), long FXI (China beta), short USD/JPY (yield differential narrows).
+    </div>
+    <div class="scenario scn-base">
+      <b>⚖️ BASE (~55%)</b> — NVDA in-line, Iran chops sideways. KOSPI range-bound 7,200-7,400; HSI 23,300-23,800; USD/JPY tests 159 but holds below 160 with verbal escalation; CNH 7.27-7.30 chop. Best APAC trades: long HSCEI / short CSI 300 (divergence theme), short USD/JPY 159 with tight stop, long CGB (1.70% target).
+    </div>
+    <div class="scenario scn-bear">
+      <b>🐻 BEAR (~20%)</b> — NVDA Q2 guide miss (&lt;$85B) OR Hormuz tanker incident OR PBOC fix unwinds. KOSPI to 7,000 (−4% more); Samsung/SKH down another 5-7%; USD/JPY breaches 160 → MoF intervention, $30-50B; CNH to 7.32 on capital outflow stress. Best APAC trades: short Korea (EWY puts), long gold, long JPY post-intervention (snap-back trade), long CGB (flight bid).
+    </div>
+  </div>
+
+  <!-- GEOPOLITICS -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🌏 Geopolitics / Policy Risk — APAC</h2>
+    <ul class="tight">
+      <li><b>China:</b> Trump-Xi summit aftermath — Boeing 200-jet deal still being parsed; rare earth flows resumed (positive). Watch Politburo meeting end of May for fresh stimulus signals. Taiwan election polls — Lai administration approval ticking lower, 2027 election cycle on radar.</li>
+      <li><b>Regional:</b> Iran strike delay = APAC oil importers (Korea, Japan, India) get short-term relief. North Korea quiet. India-Pakistan border tensions easing. Australia federal budget reaffirmed commodity export tax — BHP/Rio took it in stride.</li>
+    </ul>
+  </div>
+
+  <!-- AGENDA CALENDAR -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🗓️ Econ Calendar — APAC + Global Week Ahead</h2>
+    <div class="agenda">
+
+      <div class="agenda-day">
+        <div class="agenda-date today">
+          <div class="agenda-dow">TUE</div>
+          <div class="agenda-dom">19</div>
+          <div class="agenda-mon">MAY</div>
+        </div>
+        <div class="agenda-events">
+          <div class="agenda-event"><span class="agenda-time">DONE</span><span class="agenda-name">PBOC fix 6.8375 (firmest since Mar '23) · Iran strike delayed · KOSPI −3.12%</span></div>
+          <div class="agenda-event"><span class="agenda-time">22:00 CN</span><span class="agenda-name">US NAHB Housing Market Index (post-APAC close)</span></div>
+        </div>
+      </div>
+
+      <div class="agenda-day">
+        <div class="agenda-date">
+          <div class="agenda-dow">WED</div>
+          <div class="agenda-dom">20</div>
+          <div class="agenda-mon">MAY</div>
+        </div>
+        <div class="agenda-events">
+          <div class="agenda-event"><span class="agenda-time">09:30 CN</span><span class="agenda-name">PBOC LPR fix — 1Y &amp; 5Y rates (held expected)</span></div>
+          <div class="agenda-event"><span class="agenda-time">All day</span><span class="agenda-name">BOJ Monetary Policy Meeting Minutes (April)</span></div>
+          <div class="agenda-event star"><span class="agenda-time">04:00 CN Thu</span><span class="agenda-name">⭐ NVDA Q1 Earnings AMC (= Wed 4pm ET) — gating event for APAC semis</span></div>
+        </div>
+      </div>
+
+      <div class="agenda-day">
+        <div class="agenda-date">
+          <div class="agenda-dow">THU</div>
+          <div class="agenda-dom">21</div>
+          <div class="agenda-mon">MAY</div>
+        </div>
+        <div class="agenda-events">
+          <div class="agenda-event"><span class="agenda-time">11:30 JP</span><span class="agenda-name">Japan Trade Balance (April) — export resilience watch</span></div>
+          <div class="agenda-event"><span class="agenda-time">14:00 TW</span><span class="agenda-name">Taiwan Export Orders (April) — semi cycle read</span></div>
+          <div class="agenda-event"><span class="agenda-time">All day</span><span class="agenda-name">APAC NVDA reaction trading (KOSPI semis, TWSE)</span></div>
+        </div>
+      </div>
+
+      <div class="agenda-day">
+        <div class="agenda-date">
+          <div class="agenda-dow">FRI</div>
+          <div class="agenda-dom">22</div>
+          <div class="agenda-mon">MAY</div>
+        </div>
+        <div class="agenda-events">
+          <div class="agenda-event"><span class="agenda-time">07:30 JP</span><span class="agenda-name">Japan CPI (April) — BOJ data dependency input</span></div>
+          <div class="agenda-event"><span class="agenda-time">07:30 KR</span><span class="agenda-name">Korea PPI · Consumer Sentiment</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHAT TO WATCH -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>👀 What to Watch — Next 24 Hours</h2>
+    <ul class="tight">
+      <li><b>APAC tomorrow (Wed):</b> PBOC LPR (held expected); BOJ April minutes (any hawkish phrasing surprise); HK/China property policy headlines</li>
+      <li><b>US session tonight:</b> NAHB Housing Index 22:00 CN · Fed Bostic, Daly speakers · 20Y UST auction at 01:00 CN Thu (1pm ET Wed) = real-money sentiment test</li>
+      <li><b>Earnings:</b> Walmart BMO (consumer pulse · 20:00 CN Wed), Home Depot BMO (housing read), Cisco Tuesday Networks update</li>
+      <li><b>The big one Thu 04:00 CN:</b> <b>NVDA Q1 earnings</b> — guide above $87B = APAC semi relief rally Thursday; below $85B = KOSPI extends rout, drags TWSE + Japan tech</li>
+    </ul>
+  </div>
+
+  <!-- INTERVIEW PREP -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🎯 Interview Prep — 6 Questions (Expanded Format)</h2>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">1</span><span class="ip-q-text">"Walk me through Asian markets today."</span></div>
+        <span class="ip-tag">Cross-Asset</span>
+      </div>
+      <div class="ip-ans">
+        <p>Two distinct trades drove the tape. <b>Risk-on bid</b> from Trump's announced delay of the Iran strike lifted commodity-exposed names — ASX Materials +2.4% led by BHP +2.4% and Rio +1.9% on iron ore +3%. Hang Seng held +0.41% with HSTECH +0.8% as southbound Stock Connect saw HK$8bn of inflows. <b>Risk-off bid</b> was concentrated in Korean semis ahead of Wednesday's NVDA print — KOSPI −3.12%, its worst day in 6 weeks, with Samsung Electronics −5.2% and SK Hynix −4.8% accounting for ~60% of the index move.</p>
+        <p>The bigger structural story was the PBOC's defensive shift: USD/CNY fix at 6.8375, 466 pips stronger than the Reuters survey and the firmest CNY midpoint since March 2023. That's an explicit policy signal — Beijing is no longer comfortable letting the yuan drift weaker with broader USD strength.</p>
+        <div class="pivot">The setup into NVDA is binary for APAC — Q2 guide above $87B reopens the Korea rally and HSI catch-up; below $85B extends the semi rout to TWSE and Japan tech.</div>
+        <div class="ip-data"><b>Data cited:</b> KOSPI −3.12% · HSI +0.41% · CSI 300 −0.52% · Samsung −5.2% · SKH −4.8% · ASX +1.05% · PBOC fix 6.8375 (+466 pips vs survey) · Southbound HK$8bn</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">2</span><span class="ip-q-text">"What is the PBOC signaling through today's fix?"</span></div>
+        <span class="ip-tag">FX/EM</span>
+      </div>
+      <div class="ip-ans">
+        <p>The signal is structural, not tactical. Today's fix at 6.8375 vs Reuters survey of 6.7909 = <b>+466 pips stronger</b> than expected, the largest single-day deviation in 3 months and the <b>firmest CNY midpoint since March 24, 2023</b>. The mechanism: PBOC sets a daily reference rate around which onshore CNY can trade ±2%. By fixing dramatically stronger, they're saying "this is the line, don't push past it." The market read is that Beijing has decided the threshold for tolerated depreciation is at 6.85, not 7.00 or higher.</p>
+        <p>This coincides with state banks reportedly selling USD on offshore CNH platforms, and with CNY 245bn of reverse repo net liquidity injection — an unusual combination of <b>FX defense + easy liquidity</b>. The defensive yuan stance also explains today's HK outperformance: with FX stress contained, southbound flows go into HK-listed China names (HK$8bn today).</p>
+        <div class="pivot">Watch CNH/CNY spread (currently 80 pips); if it widens above 200 pips, expect verbal escalation + state-bank forward sales. The 1Y NDF now implies +1.2% CNY weakness vs +2.5% a month ago.</div>
+        <div class="ip-data"><b>Data cited:</b> Fix 6.8375 · Survey 6.7909 · Δ +466 pips · Firmest since 24 Mar 2023 · USD/CNH 7.275 · CNH/CNY 80 pips · 1Y NDF +1.2% · Reverse repo CNY 245bn</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">3</span><span class="ip-q-text">"Why did Korean semis get crushed today, and what's the read-through?"</span></div>
+        <span class="ip-tag">Equity Research</span>
+      </div>
+      <div class="ip-ans">
+        <p>This is positioning-driven, not fundamental. <b>Samsung Electronics −5.2% and SK Hynix −4.8%</b> together account for ~60% of the KOSPI's −3.12% move. Korea tech weight in KOSPI is 40%+; Samsung + SKH alone are 25% of the index. Long-only Asia EM funds had crowded into HBM3E names through Q1 on the AI capex thesis, and they're now trimming risk into <b>NVDA's Wednesday print</b> — a binary event where Q2 guide is the gating signal. Foreign equity outflows of ~$200m today concentrated in these two names.</p>
+        <p>The read-through: <b>HBM3E supply tightness narrative remains intact</b> per local supply-chain checks (Samsung 1z DDR5 yields and SKH 1b HBM3E throughput both ahead of plan). This is a derisking event, not a thesis break. <b>TSMC −2.1% sympathy</b> on TWSE confirms the broad semi-derisk read. </p>
+        <div class="pivot">NVDA Q2 guide &gt;$87B = relief rally takes Samsung/SKH/TSMC up 3-5% Thursday; &lt;$85B extends the rout +3-5% more and drags Tokyo Electron, Advantest, Disco. Pair trade: long SOXX / short EWY with defined R:R ahead of binary event.</div>
+        <div class="ip-data"><b>Data cited:</b> Samsung −5.2% · SKH −4.8% · KOSPI −3.12% (worst in 6wk) · KOSDAQ −3.32% · TSMC −2.1% · Foreign outflows ~$200m · KOSPI tech weight 40%+ · NVDA Q2 Street $87B</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">4</span><span class="ip-q-text">"Walk me through the BOJ — what's USD/JPY pricing?"</span></div>
+        <span class="ip-tag">Rates/FX</span>
+      </div>
+      <div class="ip-ans">
+        <p>USD/JPY at 158.95 looked at 159 intraday — the third time this month — and that's right at the MoF intervention zone. JGB 10Y added 2bps to 1.55%, steepening 2s10s to +85bps (widest in 3 months). The dynamic is asymmetric: <b>BOJ data-dependent stance keeps JGBs anchored</b> (Ueda overnight reiterated "no acceleration signal"), but the <b>US-Japan rate differential</b> (10Y UST 4.60% vs JGB 1.55% = 305bps) keeps the yen as the world's funding currency. April's $30bn intervention round triggered a 4-yen snap-back.</p>
+        <p>Options market is positioning for intervention: 1M risk reversals flipped further to JPY-calls; vol up 0.3 vols overnight. Smart money sets shorts with stops above 160.50, targeting the 153 snap-back precedent. The June 13-14 BOJ meeting is the next pivot — options price 35% probability of YCC adjustment language. If delivered, JGB sells off 10-15bps and yen rallies 3-4 yen.</p>
+        <div class="pivot">I'd be short USD/JPY 158.50 with stop 160.30, target 153 — R:R ~3:1 — positioning for the highly probable MoF intervention before BOJ meeting.</div>
+        <div class="ip-data"><b>Data cited:</b> USD/JPY 158.95 · JGB 10Y 1.55% (+2bps) · 2s10s +85bps · UST-JGB 305bps · Apr intervention $30bn → 4-yen snap · BOJ June 13-14 · YCC adj prob 35%</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">5</span><span class="ip-q-text">"What deal caught your eye in Asia today?"</span></div>
+        <span class="ip-tag">DCM</span>
+      </div>
+      <div class="ip-ans">
+        <p><b>Bank of Communications $4.5bn AT1 USD perpetual</b> priced today on a Goldman / HSBC / MS / BoCom / Citi syndicate. The notable data point: <b>books were 4.5x oversubscribed</b>, the strongest demand for a Chinese bank AT1 since 2024. Coupon at ~7.25% reset off 5Y UST in 5NC perpetual structure. This is meaningful because it suggests global investors are getting comfortable with high-grade China financial paper again, despite the property sector concerns continuing in the background.</p>
+        <p>The market read: <b>China bank AT1 spread compression is real and structural</b>. The China-vs-US bank AT1 spread is now ~150bps (was 250bps in March). For DCM, this reopens the China financials primary window after 6 months of muted activity — expect ICBC, CCB, and Postal Savings Bank to follow with their own AT1 prints in Q3. For credit investors, this is the moment to upgrade China financials exposure.</p>
+        <div class="pivot">The 4.5x book despite property bleed = the bid is structural. Long BoCom AT1 vs short comparable US bank AT1 = clean spread compression trade with 75-100bps room.</div>
+        <div class="ip-data"><b>Data cited:</b> Issuer BoCom · Size $4.5bn · Coupon ~7.25% · Structure 5NC perp · Books 4.5x · China-US AT1 spread 150bps (was 250bps Mar) · Leads GS/HSBC/MS/BoCom/Citi</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;"><span class="ip-num">6</span><span class="ip-q-text">"What's a trade you'd put on in APAC right now?"</span></div>
+        <span class="ip-tag">Trade</span>
+      </div>
+      <div class="ip-ans">
+        <p><b>Short USD/JPY at 158.50</b> with target 153, stop 160.30 — R:R ~3:1. The setup has three legs working in your favor. <b>One:</b> USD/JPY tested 159 today, third time this month, and MoF rhetoric escalated overnight (Suzuki + Kanda both made "watching with concern" comments). April's $30bn intervention round started near similar levels and snapped 4 yen. <b>Two:</b> Options market is already positioned — 1M risk reversals flipped to JPY-call positive, vol up 0.3 vols. Smart money sees the asymmetry. <b>Three:</b> BOJ June 13-14 meeting is the catalyst — 35% probability of YCC adjustment language; if delivered, yen rallies 3-4 yen even without intervention.</p>
+        <p>Alt expression for budget: <b>1M 158/153 put spread</b> on USD/JPY costs ~80bps of notional with max payout ~4x; defined-risk way to position for the same view. Pair trade alternative: <b>long FXI / short EWY</b> ahead of NVDA — China beta higher, Korea semi rout extended risk.</p>
+        <div class="pivot">If NVDA blows out AND Iran escalates AND Fed turns more hawkish — that combo invalidates the trade because USD bid + yen funding currency dynamic both intensify. Watch for that combo as the kill signal.</div>
+        <div class="ip-data"><b>Data cited:</b> Entry 158.50 · Target 153 · Stop 160.30 · R:R ~3:1 · Apr intervention $30bn → 4-yen snap · BOJ June 13-14 · YCC adj prob 35% · 1M put spread 158/153 ~80bps</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span class="badge">APAC Wrap</span> <span class="badge">Interview Prep</span> <span class="badge">Tue May 19 2026</span><br>
+    Delivered 4pm China time · Carson · ccarson.feng@gmail.com<br>
+    Sources: CNBC, Investing.com, FXStreet, Bloomberg, Reuters, Yahoo Finance · Estimates labeled where data not publicly confirmable<br>
+    Not investment advice. Numbers reflect Tuesday May 19, 2026 APAC close where confirmed.
+  </div>
+
+</div>
+</body>
+</html>
