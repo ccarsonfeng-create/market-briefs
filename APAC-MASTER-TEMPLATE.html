@@ -161,6 +161,51 @@
   .ip-data { margin-top: 10px; padding-top: 8px; border-top: 1px dashed #fecaca; font-size: 11.5px; color: #6b7280; }
   .ip-data b { color: #475569; }
 
+  /* COUNTRY CARDS */
+  .country-card { background: linear-gradient(180deg, #ffffff 0%, #fdfdfe 100%); border-radius: 12px; padding: 0; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(13,27,42,0.06), 0 1px 2px rgba(13,27,42,0.04); overflow: hidden; border: 1px solid #e5e7eb; }
+  .cc-head { padding: 14px 18px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #eef0f3; position: relative; }
+  .cc-head::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+  .cc-flag { font-size: 26px; line-height: 1; flex-shrink: 0; }
+  .cc-title-block { flex: 1; min-width: 0; }
+  .cc-country { font-size: 17px; font-weight: 800; color: #0f172a; letter-spacing: -0.2px; line-height: 1.2; }
+  .cc-tag { font-size: 11px; color: #64748b; font-weight: 600; margin-top: 2px; }
+  .cc-stat { text-align: right; flex-shrink: 0; }
+  .cc-stat .cc-stat-label { font-size: 9.5px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; }
+  .cc-stat .cc-stat-val { font-size: 17px; font-weight: 800; color: #0f172a; margin-top: 2px; letter-spacing: -0.2px; }
+  .cc-stat .cc-stat-chg { font-size: 12px; font-weight: 700; margin-top: 1px; }
+  /* China — red */
+  .country-card.cn { border-top: 5px solid #b91c1c; } .country-card.cn .cc-head::after { background: linear-gradient(90deg, #b91c1c, #fca5a5); } .country-card.cn .cc-head { background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%); }
+  /* Hong Kong — orange/gold */
+  .country-card.hk { border-top: 5px solid #d97706; } .country-card.hk .cc-head::after { background: linear-gradient(90deg, #d97706, #fcd34d); } .country-card.hk .cc-head { background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%); }
+  /* Korea — blue */
+  .country-card.kr { border-top: 5px solid #1d4ed8; } .country-card.kr .cc-head::after { background: linear-gradient(90deg, #1d4ed8, #93c5fd); } .country-card.kr .cc-head { background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%); }
+  /* Japan — purple/pink */
+  .country-card.jp { border-top: 5px solid #be185d; } .country-card.jp .cc-head::after { background: linear-gradient(90deg, #be185d, #f9a8d4); } .country-card.jp .cc-head { background: linear-gradient(180deg, #ffffff 0%, #fdf2f8 100%); }
+  /* Country body */
+  .cc-body { padding: 14px 18px 16px; }
+  .cc-indices { display: grid; gap: 8px; margin-bottom: 12px; grid-template-columns: repeat(3, 1fr); }
+  .cc-idx { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; text-align: center; }
+  .cc-idx .cci-label { font-size: 9.5px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+  .cc-idx .cci-val { font-size: 14px; font-weight: 700; color: #0f172a; margin-top: 3px; letter-spacing: -0.2px; }
+  .cc-idx .cci-chg { font-size: 11.5px; font-weight: 700; margin-top: 1px; }
+  .cc-section { margin-top: 10px; }
+  .cc-section-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px dashed #e2e8f0; display: flex; align-items: center; gap: 6px; }
+  .cc-section ul.tight { margin: 4px 0; padding-left: 18px; }
+  .cc-section ul.tight li { margin-bottom: 6px; line-height: 1.5; font-size: 13px; }
+  .cc-priced { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fde68a; border-radius: 6px; padding: 8px 12px; font-size: 12px; margin-top: 8px; color: #78350f; }
+  .cc-priced::before { content: "What's priced now → "; font-weight: 700; color: #92400e; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .cc-movers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .cc-mover { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px 10px; }
+  .cc-mover .ccm-row1 { display: flex; justify-content: space-between; align-items: center; }
+  .cc-mover .ccm-tk { font-weight: 700; font-size: 12.5px; color: #0d1b2a; }
+  .cc-mover .ccm-pct { font-weight: 700; font-size: 12.5px; }
+  .cc-mover .ccm-note { font-size: 11.5px; color: #4b5563; margin-top: 4px; line-height: 1.45; }
+  .country-card.cn .cc-section-label::before { content: "🇨🇳"; }
+  .country-card.hk .cc-section-label::before { content: "🇭🇰"; }
+  .country-card.kr .cc-section-label::before { content: "🇰🇷"; }
+  .country-card.jp .cc-section-label::before { content: "🇯🇵"; }
+  .country-card .cc-section-label.no-flag::before { content: ""; }
+
   /* FOOTER */
   .footer { text-align: center; color: #6b7280; font-size: 11px; padding: 16px 0 4px; line-height: 1.6; }
   .footer .badge { display: inline-block; padding: 2px 8px; background: #fef2f2; color: #b91c1c; border-radius: 10px; font-size: 9.5px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; margin-right: 6px; }
@@ -257,38 +302,14 @@
     </ul>
   </div>
 
-  <!-- MACRO EVENTS -->
+  <!-- ========== CROSS-REGION SETUP ========== -->
+  <!-- MACRO BACKDROP — what moved everything -->
   <div class="card orange">
-    <h2><span class="h2-badge"></span>⚡ Macro Events — Last 24h</h2>
+    <h2><span class="h2-badge"></span>⚡ Macro Backdrop — Cross-Region Drivers</h2>
     <ul class="tight">
-      <li><b>Trump postpones Iran military strike.</b> Overnight reports indicate the planned strike has been delayed; oil prices eased ~1.5% (WTI to $103.50, Brent to ~$100.80). Risk-on bid for HK/HSI; Materials sectors across APAC outperformed (ASX +1.05%).</li>
-      <li><b>PBOC sets USD/CNY at 6.8375 — firmest since March 2023.</b> +466 pips stronger than Reuters survey of 6.7909. Coincides with broader USD recovery — Beijing pushing back hard against depreciation pressure. Onshore yuan rallied 0.3% post-fix.</li>
-      <li><b>Korea semi cycle worries reignite.</b> Pre-NVDA earnings derisk dragged Samsung Electronics and SK Hynix down ~5% each; HBM3E supply tightness narrative diverged from broader chip cycle anxiety. KOSPI's worst session in 6 weeks.</li>
-      <li><b>China April activity data still weighing.</b> Last week's retail sales miss + property weakness continues to anchor onshore sentiment. CSI 300 lower for 3rd consecutive session despite the Iran de-escalation bid.</li>
-      <li><b>BOJ Ueda speech overnight.</b> Reiterated "data-dependent normalization" — no acceleration signal, leaving USD/JPY free to test 159. Risk reversals continue to flip toward JPY calls; intervention risk HIGH ahead of 159.30-160 zone.</li>
-    </ul>
-  </div>
-
-  <!-- MARKET NEWS -->
-  <div class="card blue">
-    <h2><span class="h2-badge"></span>📰 Market News — Last 24h</h2>
-    <ul class="tight">
-      <li><b>Samsung Electronics −5.2%, SK Hynix −4.8%</b> — pre-NVDA-print derisk, HBM3E demand visibility being repriced. KOSPI semi sub-index down ~5%, dragging the headline.</li>
-      <li><b>TSMC −2.1% (TWSE)</b> — semis weakness spilled to Taiwan; foundry capex narrative on watch into NVDA print.</li>
-      <li><b>Tencent +1.6%, Alibaba +2.1% (HK)</b> — China internet caught a bid on Iran de-escalation + PBOC defending yuan. HSTECH up ~0.8%.</li>
-      <li><b>BHP +2.4%, Rio Tinto +1.9% (ASX)</b> — materials rally on iron ore +3% intraday, supported by easing oil + PBOC stimulus speculation.</li>
-      <li><b>China property still bleeding</b> — HS Mainland Properties Index −1.1%; Vanke onshore bonds traded at distressed levels. No major policy catalyst expected this week.</li>
-    </ul>
-  </div>
-
-  <!-- KEY THEMES -->
-  <div class="card yellow">
-    <h2><span class="h2-badge"></span>📌 Key Themes</h2>
-    <ul class="tight">
-      <li><b>PBOC pivots from drift to defend.</b> 466-pip stronger fix = explicit signal that 6.85 is the line in the sand. Watch CNH/CNY spread (currently ~80 pips) — if it widens beyond 200 pips, expect verbal escalation + possibly forward sales by state banks.</li>
-      <li><b>NVDA-as-APAC-macro.</b> Wed AMC print is functionally a sector test for Samsung, SK Hynix, TSMC. Q2 guide above $87B = relief rally across the HBM/foundry stack; below $85B extends the KOSPI rout to Taiwan and Japan exporters.</li>
-      <li><b>Yen carry on borrowed time.</b> USD/JPY at 158.95 looked at 159 intraday; MoF rhetoric escalated overnight ("watching with concern"). 159.30-160 is the intervention zone — risk asymmetric.</li>
-      <li><b>HK/A-share divergence widening.</b> HSI +0.41% vs CSI 300 −0.52% = 4th consecutive session of HK outperforming mainland. Southbound Stock Connect inflows ~HK$8bn — domestic Chinese savers preferring HK-listed China names over A-shares.</li>
+      <li><b>Trump postpones Iran military strike.</b> Overnight reports indicate the planned strike has been delayed; oil eased ~1.5% (WTI to $103.50, Brent to ~$100.80). Risk-on bid for HK; Materials outperformed (ASX +1.05%).</li>
+      <li><b>NVDA Wed AMC = APAC-wide gating event.</b> Q2 guide above $87B = relief rally across the HBM/foundry stack (Samsung, SKH, TSMC); below $85B extends the KOSPI rout to Taiwan and Japan exporters.</li>
+      <li><b>USD broad bid resumed.</b> DXY +0.4% — feeds USD/JPY 159 test, USD/KRW 1,438, and pressure on the PBOC fix. The cross-region FX stress this week is all USD-driven.</li>
     </ul>
   </div>
 
@@ -342,49 +363,199 @@
     </div>
   </div>
 
-  <!-- WHAT MOVED EQUITIES -->
-  <div class="card">
-    <h2><span class="h2-badge"></span>⚡ What Moved APAC Equities — Depth + Positioning</h2>
-    <div class="depth-bullet">
-      <div class="num">1</div>
-      <b>KOSPI −3.12% — concentrated pre-NVDA semi derisk.</b> Samsung Electronics −5.2% and SK Hynix −4.8% together account for ~60% of the KOSPI move. The trigger isn't fundamental — it's positioning: long-only Asia EM funds had crowded into HBM3E names through Q1, and they're trimming risk into a binary NVDA event.
-      <span class="priced">KOSPI tech weight = 40%+; Samsung+SKH alone = 25% of index. Watch USD/KRW 1,440 — break above signals foreign equity outflows accelerating. Pair trade: long FXI / short EWY for next 2 weeks.</span>
+  <!-- ========== COUNTRY SECTIONS ========== -->
+
+  <!-- 🇨🇳 CHINA -->
+  <div class="country-card cn">
+    <div class="cc-head">
+      <span class="cc-flag">🇨🇳</span>
+      <div class="cc-title-block">
+        <div class="cc-country">China — Mainland Soft, PBOC Pivots to Defense</div>
+        <div class="cc-tag">CSI 300 4th down session · PBOC firmest fix since Mar '23</div>
+      </div>
+      <div class="cc-stat">
+        <div class="cc-stat-label">CSI 300</div>
+        <div class="cc-stat-val">3,420</div>
+        <div class="cc-stat-chg neg">−0.52%</div>
+      </div>
     </div>
-    <div class="depth-bullet">
-      <div class="num">2</div>
-      <b>HSI shrugs off mainland softness on Iran-delay bid.</b> Trump's postponed Iran strike eased oil pressure; HK risk assets bid disproportionately versus mainland because southbound flows finally turned positive (HK$8bn inflow). HSTECH +0.8%, HS Financials +0.5%.
-      <span class="priced">HK-A spread widened to 4th session — HSI outperforming CSI 300 by ~150bps in May. Long HSCEI / short CSI 300 pair gaining traction in regional books.</span>
+    <div class="cc-body">
+      <div class="cc-indices">
+        <div class="cc-idx"><div class="cci-label">SSE Comp</div><div class="cci-val">4,132</div><div class="cci-chg neg">~−0.5%</div></div>
+        <div class="cc-idx"><div class="cci-label">CSI 300</div><div class="cci-val">3,420</div><div class="cci-chg neg">−0.52%</div></div>
+        <div class="cc-idx"><div class="cci-label">USD/CNY Fix</div><div class="cci-val">6.8375</div><div class="cci-chg pos">+466 pips vs survey</div></div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">PBOC / Policy</div>
+        <ul class="tight">
+          <li><b>PBOC daily fix:</b> USD/CNY 6.8375 vs Reuters survey 6.7909 — <b>+466 pips stronger</b>, firmest CNY midpoint since 24 March 2023. Explicit defensive signal — Beijing telling the market 6.85 is the line.</li>
+          <li><b>CNH/CNY spread:</b> ~80 pips (USD/CNH 7.275 vs onshore 7.267) — contained; widening above 200 pips = real outflow stress signal.</li>
+          <li><b>PBOC operations:</b> CNY 245bn 7-day reverse repo net injection — supportive into month-end liquidity. Unusual combo: <b>FX defense + easy liquidity</b>.</li>
+          <li><b>Politburo:</b> SCO summit readout — "high-quality development" rhetoric; no fresh stimulus announcement.</li>
+        </ul>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Market News & Movers</div>
+        <ul class="tight">
+          <li><b>China April activity data still weighing</b> — last week's retail sales miss + property weakness; CSI 300 down 3 consecutive sessions despite Iran de-escalation bid.</li>
+          <li><b>China property still bleeding</b> — HS Mainland Properties Index −1.1%; Vanke onshore bonds traded at distressed levels.</li>
+          <li><b>TSF/M2 (April):</b> TSF +2.3% YoY — weakest since 2020; continued credit tightening despite PBOC easing rhetoric.</li>
+        </ul>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Key Theme — PBOC pivots from drift to defend</div>
+        <div style="font-size: 13px; line-height: 1.55;">The 466-pip stronger fix isn't tactical — it's structural. Beijing has decided tolerance for tolerated CNY depreciation bottoms at 6.85, not 7.00. State banks reportedly selling USD on offshore CNH platforms. 1Y NDF now implies +1.2% CNY weakness vs +2.5% a month ago.</div>
+        <div class="cc-priced">CNH 1M implied vol still at multi-month lows (~3.5%) — options market hasn't fully repriced PBOC's tone shift. Cheap to own optionality on a band-widening surprise. Watch CNH/CNY spread &gt; 200 pips = real stress.</div>
+      </div>
     </div>
-    <div class="depth-bullet">
-      <div class="num">3</div>
-      <b>PBOC defensive fix is the bigger structural story.</b> 6.8375 = +466 pips stronger than Reuters survey (largest deviation in 3+ months). This signals Beijing's tolerance for further CNY depreciation has bottomed out around 7.30 on the offshore.
-      <span class="priced">CNH 1M implied vol still at multi-month lows (~3.5%) — options market hasn't fully repriced PBOC's tone shift. Cheap to own optionality on a band-widening surprise.</span>
-    </div>
-    <div class="key-levels"><b>HSI:</b> 23,300 support; 23,700 resistance. <b>KOSPI:</b> 7,200 critical; 7,400 to repair. <b>SSE:</b> 3,380 support. <b>USD/CNH:</b> 7.30 PBOC line.</div>
   </div>
 
-  <!-- SINGLE NAME MOVERS -->
-  <div class="card">
-    <h2><span class="h2-badge"></span>🏷️ Single-Name Movers</h2>
-    <div class="grid-2">
-      <div class="mover-card"><div class="row1"><span class="tk">Samsung Electronics (KS)</span><span class="pct neg">−5.2%</span></div><div class="note">Pre-NVDA semi derisk; HBM3E demand visibility being repriced. Single biggest drag on KOSPI today.</div></div>
-      <div class="mover-card"><div class="row1"><span class="tk">SK Hynix (KS)</span><span class="pct neg">−4.8%</span></div><div class="note">Same NVDA-pre-print theme; foreign equity outflows of ~$200m today alone per local press estimates.</div></div>
-      <div class="mover-card"><div class="row1"><span class="tk">Tencent (HK)</span><span class="pct pos">+1.6%</span></div><div class="note">Bid on Iran de-escalation + PBOC defending yuan = better China risk tone; HSTECH leader.</div></div>
-      <div class="mover-card"><div class="row1"><span class="tk">BHP / Rio Tinto (ASX)</span><span class="pct pos">+2.4% / +1.9%</span></div><div class="note">Iron ore +3% on PBOC stimulus speculation + Iran ease; Materials sector leadership.</div></div>
+  <!-- 🇭🇰 HONG KONG -->
+  <div class="country-card hk">
+    <div class="cc-head">
+      <span class="cc-flag">🇭🇰</span>
+      <div class="cc-title-block">
+        <div class="cc-country">Hong Kong — HSI Outperforms on Iran-Delay + Southbound Flow</div>
+        <div class="cc-tag">4th session of HSI &gt; CSI 300 · HSTECH leads</div>
+      </div>
+      <div class="cc-stat">
+        <div class="cc-stat-label">Hang Seng</div>
+        <div class="cc-stat-val">~26,500</div>
+        <div class="cc-stat-chg pos">+0.41%</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-indices">
+        <div class="cc-idx"><div class="cci-label">Hang Seng</div><div class="cci-val">~26,500</div><div class="cci-chg pos">+0.41%</div></div>
+        <div class="cc-idx"><div class="cci-label">HSTECH</div><div class="cci-val">5,895</div><div class="cci-chg pos">+0.80%</div></div>
+        <div class="cc-idx"><div class="cci-label">HSCEI</div><div class="cci-val">9,442</div><div class="cci-chg pos">+0.55%</div></div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Flows & Liquidity</div>
+        <ul class="tight">
+          <li><b>Southbound Stock Connect:</b> ~HK$8bn inflow — domestic Chinese savers preferring HK-listed China names over A-shares. 4th consecutive day of net buying.</li>
+          <li><b>HKD:</b> Pegged 7.7510, stable at strong end of band. HIBOR 1M ~4.05% — funding conditions easy as HKMA aggregate balance stays elevated.</li>
+          <li><b>HK IPO pipeline:</b> Reports of 2 mainland tech names eyeing H-share secondary listings — momentum-positive for HKEX revenue.</li>
+        </ul>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Market News & Movers</div>
+        <div class="cc-movers">
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Tencent</span><span class="ccm-pct pos">+1.6%</span></div><div class="ccm-note">Risk-on bid on Iran de-escalation + PBOC defending yuan. HSTECH leader; 5-month high on gaming approval visibility.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Alibaba</span><span class="ccm-pct pos">+2.1%</span></div><div class="ccm-note">China internet caught a bid; cloud/AI narrative still supportive heading into June quarter.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">HK Financials</span><span class="ccm-pct pos">+0.5%</span></div><div class="ccm-note">HSBC, Standard Chartered firm — strong USD + curve steepening tailwind for HK-listed banks.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">HS Mainland Prop</span><span class="ccm-pct neg">−1.1%</span></div><div class="ccm-note">Property still bleeding; Vanke onshore distressed; no policy support expected this week.</div></div>
+        </div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Key Theme — HK/A-share divergence widening structurally</div>
+        <div style="font-size: 13px; line-height: 1.55;">HSI outperforming CSI 300 by ~150bps in May — 4th session of HK strength. Driven by (1) southbound flow as China savers diversify FX, (2) PBOC's yuan defense reducing offshore Chinese asset risk premium, (3) HK valuations cheaper than A-shares on most names.</div>
+        <div class="cc-priced">Long HSCEI / short CSI 300 pair gaining traction in regional books. The structural backdrop favors HK over A through end of May. HSI 23,300 support; 23,700 resistance.</div>
+      </div>
     </div>
   </div>
 
-  <!-- CHINA MACRO STACK -->
-  <div class="card red">
-    <h2><span class="h2-badge"></span>🇨🇳 China Macro Stack</h2>
-    <ul class="tight">
-      <li><b>PBOC daily fix:</b> USD/CNY 6.8375 vs Reuters survey 6.7909 — <b>+466 pips stronger</b>, firmest CNY midpoint since 24 March 2023. Defensive policy signal.</li>
-      <li><b>CNH/CNY spread:</b> ~80 pips (USD/CNH 7.275 vs onshore 7.267) — contained for now; widening above 200 pips = real outflow stress.</li>
-      <li><b>PBOC operations:</b> CNY 245bn 7-day reverse repo net injection — small but supportive into month-end liquidity.</li>
-      <li><b>TSF/M2:</b> Not released today; April data last week showed continued credit tightening (TSF +2.3% YoY, weakest since 2020).</li>
-      <li><b>Property:</b> HS Mainland Properties −1.1% · Vanke USD bonds at distressed levels · No major policy support expected this week.</li>
-      <li><b>Key headline:</b> Politburo readout discussed at SCO summit — "high-quality development" rhetoric, no fresh stimulus announcement.</li>
-    </ul>
+  <!-- 🇰🇷 KOREA -->
+  <div class="country-card kr">
+    <div class="cc-head">
+      <span class="cc-flag">🇰🇷</span>
+      <div class="cc-title-block">
+        <div class="cc-country">Korea — Worst Day in 6 Weeks on Pre-NVDA Semi Derisk</div>
+        <div class="cc-tag">KOSPI −3.12% · Samsung/SKH −5% each · FX outflows accelerate</div>
+      </div>
+      <div class="cc-stat">
+        <div class="cc-stat-label">KOSPI</div>
+        <div class="cc-stat-val">7,282</div>
+        <div class="cc-stat-chg neg">−3.12%</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-indices">
+        <div class="cc-idx"><div class="cci-label">KOSPI</div><div class="cci-val">7,282</div><div class="cci-chg neg">−3.12%</div></div>
+        <div class="cc-idx"><div class="cci-label">KOSDAQ</div><div class="cci-val">848</div><div class="cci-chg neg">−3.32%</div></div>
+        <div class="cc-idx"><div class="cci-label">USD/KRW</div><div class="cci-val">1,438</div><div class="cci-chg neg">+0.6%</div></div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">BOK / FX Stress</div>
+        <ul class="tight">
+          <li><b>BOK:</b> Next meeting May 23 · base rate 2.50% · hold widely expected; FX defense in focus if USD/KRW breaks 1,450.</li>
+          <li><b>KRW under pressure:</b> +0.6% to 1,438 on $200m+ foreign equity outflow today; options skew flipped to KRW-puts (USD/KRW calls) for the first time since February.</li>
+          <li><b>KTB 10Y +3bps to 3.42%</b> — capital flow pressure intensifying; KTB-UST spread now −116bps (narrowest in 18 months).</li>
+        </ul>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Market News & Movers</div>
+        <div class="cc-movers">
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Samsung Electronics</span><span class="ccm-pct neg">−5.2%</span></div><div class="ccm-note">Pre-NVDA semi derisk; HBM3E demand visibility being repriced. Single biggest drag on KOSPI today.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">SK Hynix</span><span class="ccm-pct neg">−4.8%</span></div><div class="ccm-note">Same NVDA-pre-print theme; foreign equity outflows ~$200m today alone per local press estimates.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">KOSPI Semis sub-index</span><span class="ccm-pct neg">−5.0%</span></div><div class="ccm-note">Worst sector across APAC today. Concentrated derisk into binary NVDA event.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Hyundai Motor</span><span class="ccm-pct neg">−1.4%</span></div><div class="ccm-note">Exporters caught in broad KOSPI risk-off; weak KRW typically a tailwind but overshadowed by tech rout.</div></div>
+        </div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Key Theme — NVDA-as-Korea-macro</div>
+        <div style="font-size: 13px; line-height: 1.55;">KOSPI tech weight = 40%+; Samsung + SKH alone = 25% of index. Pre-NVDA derisk is positioning-driven, not fundamental — HBM3E supply tightness narrative remains intact per local supply-chain checks (Samsung 1z DDR5 yields and SKH 1b HBM3E throughput both ahead of plan).</div>
+        <div class="cc-priced">Q2 guide &gt;$87B = Samsung/SKH/TSMC bounce 3-5% Thursday; &lt;$85B extends rout +3-5% more. KOSPI 7,200 critical; 7,400 to repair. USD/KRW 1,450 = BoK alert level. Pair: long SOXX / short EWY with defined R:R into binary event.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🇯🇵 JAPAN -->
+  <div class="country-card jp">
+    <div class="cc-head">
+      <span class="cc-flag">🇯🇵</span>
+      <div class="cc-title-block">
+        <div class="cc-country">Japan — Range-Bound Nikkei, USD/JPY Looks at 159 (3rd Time This Month)</div>
+        <div class="cc-tag">MoF intervention risk HIGH · BOJ "data-dependent"</div>
+      </div>
+      <div class="cc-stat">
+        <div class="cc-stat-label">USD/JPY</div>
+        <div class="cc-stat-val">158.95</div>
+        <div class="cc-stat-chg neg">+0.3% · ⚠ MoF zone</div>
+      </div>
+    </div>
+    <div class="cc-body">
+      <div class="cc-indices">
+        <div class="cc-idx"><div class="cci-label">Nikkei 225</div><div class="cci-val">60,984</div><div class="cci-chg flat">~flat</div></div>
+        <div class="cc-idx"><div class="cci-label">TOPIX</div><div class="cci-val">3,720</div><div class="cci-chg neg">−0.10%</div></div>
+        <div class="cc-idx"><div class="cci-label">JGB 10Y</div><div class="cci-val">1.55%</div><div class="cci-chg neg">+2 bps</div></div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">BOJ / Yen Watch</div>
+        <ul class="tight">
+          <li><b>BOJ Ueda overnight:</b> Reiterated "data-dependent normalization" — no acceleration signal, leaving USD/JPY free to test 159. Next meeting June 13–14; options price 35% probability of YCC adjustment language.</li>
+          <li><b>USD/JPY at 158.95:</b> Looked at 159 intraday — 3rd time this month. MoF rhetoric escalated overnight (Suzuki + Kanda "watching with concern"). April's $30bn intervention round started near similar levels and snapped 4 yen.</li>
+          <li><b>Options market:</b> 1M risk reversals flipped further to JPY-calls; vol up 0.3 vols overnight. Intervention strike likely 159.30–159.80.</li>
+          <li><b>JGB curve steepening:</b> 2s10s now +85bps, widest in 3 months. UST-JGB 305bps keeps yen as funding currency.</li>
+        </ul>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Market News & Movers</div>
+        <div class="cc-movers">
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">TOPIX Autos</span><span class="ccm-pct neg">−0.6%</span></div><div class="ccm-note">Toyota/Honda mixed; weak yen exporter tailwind offset by US tariff overhang.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">TOPIX Banks</span><span class="ccm-pct neg">−0.2%</span></div><div class="ccm-note">MUFG, SMFG soft as JGB steepening tailwind paused; intervention risk caps short-end carry.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Tokyo Electron / Advantest</span><span class="ccm-pct neg">−1.5% / −2.0%</span></div><div class="ccm-note">Japan semi-eq names softer on pre-NVDA semi derisk read-across from KOSPI.</div></div>
+          <div class="cc-mover"><div class="ccm-row1"><span class="ccm-tk">Nikkei vol</span><span class="ccm-pct flat">ATM 16.5%</span></div><div class="ccm-note">Vol pricing low into BOJ minutes; cheap to own gamma if MoF intervenes.</div></div>
+        </div>
+      </div>
+
+      <div class="cc-section">
+        <div class="cc-section-label">Key Theme — Yen carry on borrowed time</div>
+        <div style="font-size: 13px; line-height: 1.55;">BOJ data-dependent stance keeps JGBs anchored but US-Japan rate differential (305bps) keeps yen as funding currency. 159.30–160 is the intervention zone. Risk is asymmetric — heavy intervention can snap 4 yen in a session (April precedent).</div>
+        <div class="cc-priced">Short USD/JPY 158.50, target 153, stop 160.30 — R:R ~3:1. Alt: 1M 158/153 put spread ~80bps premium. Watch BOJ June 13–14 for YCC adjustment language — that's the additional catalyst. JGB 10Y: 1.50% support; 1.65% resistance.</div>
+      </div>
+    </div>
   </div>
 
   <!-- APAC RATES -->
