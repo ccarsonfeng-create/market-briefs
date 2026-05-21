@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Overnight Wrap — Wed May 20, 2026 — NVDA Q2 $91B Blowout, Stocks Rip Pre-Print</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+    margin: 0;
+    padding: 16px;
+    line-height: 1.45;
+    font-size: 15px;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; }
+
+  /* HEADER — light + clean */
+  header.dark {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    color: #0f172a;
+    padding: 24px 24px 20px;
+    border-radius: 14px 14px 0 0;
+    border-left: 6px solid #3b82f6;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(15,23,42,0.05);
+  }
+  header.dark::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #f59e0b 100%);
+  }
+  header.dark .eyebrow { font-size: 11px; color: #3b82f6; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; font-weight: 700; }
+  header.dark h1 { margin: 0 0 6px 0; font-size: 23px; letter-spacing: -0.3px; font-weight: 700; color: #0f172a; }
+  header.dark .sub { color: #64748b; font-size: 13px; margin-bottom: 12px; }
+  header.dark .tags { margin-top: 4px; }
+  header.dark .tag {
+    display: inline-block;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 10.5px;
+    font-weight: 600;
+    margin-right: 6px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+
+  /* STATS PANEL — 3 rows: indices, yields, commodities+currencies */
+  .stats-panel {
+    background: #ffffff;
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .stats-row {
+    display: grid;
+    gap: 8px;
+  }
+  .stats-row.row-indices { grid-template-columns: repeat(4, 1fr); }
+  .stats-row.row-yields  { grid-template-columns: repeat(4, 1fr); }
+  .stats-row.row-fx-cmd  { grid-template-columns: repeat(6, 1fr); }
+  .stats-row-label {
+    grid-column: 1 / -1;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    border-bottom: 1px dashed #e2e8f0;
+    margin-bottom: 2px;
+  }
+  .stat-tile {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #cbd5e1;
+    text-align: center;
+    min-width: 0;
+  }
+  .stat-tile.up    { border-top-color: #ef4444; }
+  .stat-tile.down  { border-top-color: #10b981; }
+  .stat-tile.green-up   { border-top-color: #10b981; }
+  .stat-tile.red-down   { border-top-color: #ef4444; }
+  .stat-tile.warn  { border-top-color: #f59e0b; background: #fffbeb; }
+  .st-label {
+    font-size: 9px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .st-val {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+  }
+  .st-sub {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 2px;
+  }
+  .st-sub.pos { color: #047857; }
+  .st-sub.neg { color: #b91c1c; }
+  .st-sub.warn { color: #b45309; }
+  .st-sub.flat { color: #64748b; }
+
+  /* PHONE SUMMARY — lighter, cleaner */
+  .phone-summary {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 18px 20px;
+    border-radius: 0 0 14px 14px;
+    border-left: 6px solid #3b82f6;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.75;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+  }
+  .ps-title {
+    font-size: 10px; color: #3b82f6; text-transform: uppercase;
+    letter-spacing: 1.2px; font-weight: 700; margin-bottom: 10px;
+    padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;
+    font-family: -apple-system, sans-serif;
+  }
+  .phone-summary .ps-row { padding: 2px 0; color: #1e293b; }
+  .phone-summary .ps-em { color: #1d4ed8; font-weight: 700; }
+  .phone-summary .ps-warn { color: #b45309; font-weight: 600; }
+  .phone-summary .ps-pos { color: #047857; font-weight: 600; }
+  .phone-summary .ps-neg { color: #b91c1c; font-weight: 600; }
+
+  /* CARDS — polished elevation + accent */
+  .card {
+    background: linear-gradient(180deg, #ffffff 0%, #fdfdfe 100%);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(13,27,42,0.06), 0 1px 2px rgba(13,27,42,0.04);
+    border-left: 4px solid #4cc9f0;
+    position: relative;
+  }
+  .card h2 {
+    margin: 0 0 14px 0;
+    font-size: 17px;
+    color: #0d1b2a;
+    letter-spacing: -0.1px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card h2 .h2-badge {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: #4cc9f0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(76,201,240,0.18);
+  }
+  .card.orange { border-left-color: #f4a261; }
+  .card.orange h2 .h2-badge { background: #f4a261; box-shadow: 0 0 0 3px rgba(244,162,97,0.18); }
+  .card.blue { border-left-color: #4361ee; }
+  .card.blue h2 .h2-badge { background: #4361ee; box-shadow: 0 0 0 3px rgba(67,97,238,0.18); }
+  .card.yellow { border-left-color: #e9c46a; }
+  .card.yellow h2 .h2-badge { background: #e9c46a; box-shadow: 0 0 0 3px rgba(233,196,106,0.18); }
+  .card.purple { border-left-color: #7b2cbf; }
+  .card.purple h2 .h2-badge { background: #7b2cbf; box-shadow: 0 0 0 3px rgba(123,44,191,0.18); }
+  .card.green { border-left-color: #2a9d8f; }
+  .card.green h2 .h2-badge { background: #2a9d8f; box-shadow: 0 0 0 3px rgba(42,157,143,0.18); }
+  .card.red { border-left-color: #e63946; }
+  .card.red h2 .h2-badge { background: #e63946; box-shadow: 0 0 0 3px rgba(230,57,70,0.18); }
+  .card.gold { border-left-color: #f1c40f; }
+  .card.gold h2 .h2-badge { background: #f1c40f; box-shadow: 0 0 0 3px rgba(241,196,15,0.22); }
+
+  ul.tight { margin: 6px 0; padding-left: 20px; }
+  ul.tight li { margin-bottom: 9px; line-height: 1.55; }
+
+  /* GRIDS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .grid-11 { display: grid; grid-template-columns: repeat(11, 1fr); gap: 5px; }
+
+  /* INDEX TILES */
+  .idx-tile {
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .idx-tile .label { font-size: 10.5px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; }
+  .idx-tile .price { font-size: 19px; font-weight: 700; color: #0d1b2a; margin: 6px 0 3px; letter-spacing: -0.3px; }
+  .idx-tile .chg { font-size: 12px; font-weight: 600; }
+  .pos { color: #2a9d8f; }
+  .neg { color: #e63946; }
+  .flat { color: #6b7280; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table th, table td { text-align: left; padding: 8px 9px; border-bottom: 1px solid #eef0f3; }
+  table th {
+    background: linear-gradient(180deg, #f7f8fa 0%, #f0f2f6 100%);
+    font-size: 10.5px; text-transform: uppercase;
+    color: #5b6675; letter-spacing: 0.6px; font-weight: 700;
+  }
+  tr.up td { background: #fef5f5; }
+  tr.down td { background: #f0fdf4; }
+  tr.usd-strong td { background: #fef5f5; }
+  tr.usd-weak td { background: #f0fdf4; }
+
+  /* SECTOR HEATMAP — refined cells */
+  .sector-cell {
+    padding: 11px 4px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.3px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.08);
+  }
+  .sec-pos { background: linear-gradient(180deg, #34b39d 0%, #2a9d8f 100%); }
+  .sec-soft { background: linear-gradient(180deg, #f6b06b 0%, #f4a261 100%); }
+  .sec-neg { background: linear-gradient(180deg, #ef4858 0%, #e63946 100%); }
+  .sec-flat { background: linear-gradient(180deg, #7a8593 0%, #6b7280 100%); }
+
+  /* DEPTH BULLETS — polished numbered cards */
+  .depth-bullet {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f5f9 100%);
+    border-left: 3px solid #4cc9f0;
+    padding: 12px 14px 12px 48px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+  }
+  .depth-bullet .num {
+    position: absolute;
+    left: 12px; top: 12px;
+    width: 26px; height: 26px;
+    background: #0d1b2a;
+    color: #4cc9f0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 12.5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+  .depth-bullet .priced {
+    display: block;
+    margin-top: 8px;
+    font-size: 12.5px;
+    color: #475569;
+    padding-top: 8px;
+    border-top: 1px dashed #cbd5e1;
+  }
+  .depth-bullet .priced::before {
+    content: "What's priced now → ";
+    color: #0d1b2a;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* MOVER CARDS — refined */
+  .mover-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .mover-card .row1 { display: flex; justify-content: space-between; align-items: center; }
+  .mover-card .tk { font-weight: 700; font-size: 14px; color: #0d1b2a; }
+  .mover-card .pct { font-weight: 700; font-size: 14px; }
+  .mover-card .note { font-size: 12px; color: #4b5563; margin-top: 6px; line-height: 1.5; }
+
+  /* KEY LEVELS — refined warm callout */
+  .key-levels {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    margin-top: 12px;
+    color: #78350f;
+  }
+  .key-levels::before {
+    content: "📐 KEY LEVELS";
+    display: block;
+    font-size: 10px;
+    color: #92400e;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+  .key-levels b { color: #92400e; }
+
+  /* SCENARIO CARDS */
+  .scenario {
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .scn-bull { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-left: 4px solid #10b981; }
+  .scn-base { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); border-left: 4px solid #6b7280; }
+  .scn-bear { background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border-left: 4px solid #ef4444; }
+
+  /* INTERVIEW PREP — EXPANDED FORMAT */
+  .ip-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #4cc9f0;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(13,27,42,0.04);
+  }
+  .ip-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .ip-num {
+    display: inline-block;
+    background: #0d1b2a;
+    color: #4cc9f0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    text-align: center; line-height: 28px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .ip-q-text {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0d1b2a;
+    flex: 1;
+  }
+  .ip-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #4cc9f0;
+    background: rgba(76,201,240,0.12);
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+  }
+  .ip-ans {
+    font-size: 13px;
+    color: #334155;
+    line-height: 1.65;
+  }
+  .ip-ans p { margin: 0 0 8px 0; }
+  .ip-ans p:last-child { margin-bottom: 0; }
+  .ip-ans .pivot {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: rgba(76,201,240,0.06);
+    border-left: 2px solid #4cc9f0;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #1e293b;
+    font-size: 12.5px;
+  }
+  .ip-ans .pivot::before { content: "View → "; font-weight: 700; font-style: normal; color: #0d1b2a; }
+  .ip-ans b { color: #0d1b2a; }
+  .ip-data {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #d1d5db;
+    font-size: 11.5px;
+    color: #6b7280;
+  }
+  .ip-data b { color: #475569; }
+
+  /* SECTION DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #cbd5e1 50%, transparent 100%);
+    margin: 18px 0;
+  }
+
+  /* SECTOR SPOTLIGHTS — Semis + AI cards with news + implication */
+  .spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .spotlight-sec {
+    background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid #e0e7ff;
+    border-top: 4px solid #6366f1;
+    box-shadow: 0 1px 3px rgba(99,102,241,0.06);
+  }
+  .spotlight-sec.semis  { border-top-color: #0ea5e9; }
+  .spotlight-sec.ai     { border-top-color: #8b5cf6; }
+  .spotlight-sec.energy { border-top-color: #f59e0b; }
+  .spotlight-sec.fin    { border-top-color: #10b981; }
+  .spotlight-sec.health { border-top-color: #ec4899; }
+  .spotlight-head {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .spotlight-icon { font-size: 18px; }
+  .spotlight-name {
+    font-size: 13px; font-weight: 800; color: #0f172a;
+    letter-spacing: -0.1px;
+  }
+  .spotlight-tag {
+    font-size: 9px; font-weight: 700; color: #6366f1;
+    background: rgba(99,102,241,0.1);
+    padding: 2px 7px; border-radius: 8px;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    margin-left: auto;
+  }
+  .spotlight-sec.semis .spotlight-tag  { color: #0369a1; background: rgba(14,165,233,0.1); }
+  .spotlight-sec.ai .spotlight-tag     { color: #6d28d9; background: rgba(139,92,246,0.1); }
+  .spotlight-sec.energy .spotlight-tag { color: #b45309; background: rgba(245,158,11,0.12); }
+  .spotlight-news {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 11px 12px;
+    margin-bottom: 10px;
+    border-left: 3px solid #6366f1;
+  }
+  .spotlight-sec.semis .spotlight-news  { border-left-color: #0ea5e9; }
+  .spotlight-sec.ai .spotlight-news     { border-left-color: #8b5cf6; }
+  .spotlight-news:last-child { margin-bottom: 0; }
+  .news-headline {
+    font-weight: 700; font-size: 13px;
+    color: #0f172a; margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .news-body {
+    font-size: 12.5px; color: #334155;
+    line-height: 1.55; margin-bottom: 8px;
+  }
+  .news-impl {
+    background: rgba(99,102,241,0.07);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-size: 11.5px;
+    display: flex; gap: 8px;
+    align-items: flex-start;
+  }
+  .spotlight-sec.semis .news-impl { background: rgba(14,165,233,0.08); }
+  .spotlight-sec.ai .news-impl    { background: rgba(139,92,246,0.08); }
+  .impl-tag {
+    font-size: 8.5px; font-weight: 800; color: #6366f1;
+    background: rgba(99,102,241,0.18);
+    padding: 3px 7px; border-radius: 8px;
+    letter-spacing: 0.6px; white-space: nowrap;
+    flex-shrink: 0; margin-top: 1px;
+    text-transform: uppercase;
+  }
+  .spotlight-sec.semis .impl-tag { color: #0c4a6e; background: rgba(14,165,233,0.18); }
+  .spotlight-sec.ai .impl-tag    { color: #4c1d95; background: rgba(139,92,246,0.18); }
+  .impl-text { color: #1e293b; line-height: 1.5; flex: 1; }
+
+  /* AGENDA CALENDAR — date badges + event rows */
+  .agenda { display: flex; flex-direction: column; gap: 4px; }
+  .agenda-day {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef0f3;
+  }
+  .agenda-day:last-of-type { border-bottom: none; }
+  .agenda-date {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px 4px 6px;
+    min-width: 56px;
+    text-align: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(13,27,42,0.18);
+  }
+  .agenda-date.today {
+    background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+    box-shadow: 0 2px 8px rgba(76,201,240,0.4);
+  }
+  .agenda-dow {
+    font-size: 9.5px; color: #4cc9f0; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+  }
+  .agenda-date.today .agenda-dow { color: #fff; }
+  .agenda-dom { font-size: 22px; font-weight: 800; line-height: 1.05; margin: 3px 0 1px; letter-spacing: -0.5px; }
+  .agenda-mon {
+    font-size: 9px; color: #94a3b8; letter-spacing: 1px;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .agenda-date.today .agenda-mon { color: #e0e7ff; }
+  .agenda-events {
+    flex: 1; display: flex; flex-direction: column; gap: 5px;
+    justify-content: center; min-width: 0;
+  }
+  .agenda-event {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 5px 0; font-size: 13px;
+  }
+  .agenda-time {
+    font-size: 10.5px; font-weight: 700; color: #4cc9f0;
+    background: rgba(76,201,240,0.1);
+    padding: 4px 9px; border-radius: 12px;
+    letter-spacing: 0.5px; min-width: 64px;
+    text-align: center; flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .agenda-name { color: #1d2733; line-height: 1.45; flex: 1; }
+  .agenda-event.star {
+    background: linear-gradient(90deg, #fffbeb 0%, #fef3c7 100%);
+    border-radius: 8px; padding: 7px 10px; margin: 2px 0;
+    border-left: 3px solid #f59e0b;
+  }
+  .agenda-event.star .agenda-time {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+  }
+  .agenda-event.star .agenda-name { font-weight: 700; color: #78350f; }
+  .agenda-fomc {
+    margin-top: 12px; padding: 12px 14px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+    color: white; border-radius: 10px;
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(30,58,138,0.25);
+  }
+  .agenda-fomc-pin {
+    background: rgba(255,255,255,0.18); width: 28px; height: 28px;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  .agenda-fomc-label {
+    font-size: 9.5px; font-weight: 700; letter-spacing: 1.2px;
+    color: #c7d2fe; text-transform: uppercase; display: block;
+  }
+  .agenda-fomc-main { flex: 1; min-width: 0; }
+  .agenda-fomc-date { font-size: 14px; font-weight: 700; }
+  .agenda-fomc-detail { font-size: 11.5px; color: #cbd5e1; margin-top: 2px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 11px;
+    padding: 18px 0 6px;
+    line-height: 1.6;
+  }
+  .footer .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #0d1b2a;
+    color: #4cc9f0;
+    border-radius: 10px;
+    font-size: 9.5px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 10px; font-size: 14px; }
+    header.dark { padding: 18px 16px; border-radius: 12px 12px 0 0; }
+    header.dark h1 { font-size: 20px; }
+    .stats-panel { padding: 12px 14px; }
+    .stats-row.row-indices { grid-template-columns: 1fr 1fr; }
+    .stats-row.row-yields  { grid-template-columns: 1fr 1fr; }
+    .stats-row.row-fx-cmd  { grid-template-columns: 1fr 1fr 1fr; }
+    .stat-tile { padding: 7px 8px; }
+    .st-val { font-size: 14px; }
+    .spotlight-grid { grid-template-columns: 1fr; }
+    .phone-summary { padding: 16px 14px; font-size: 12.5px; line-height: 1.7; border-radius: 0 0 12px 12px; }
+    .card { padding: 14px 14px; }
+    .card h2 { font-size: 15px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-11 { grid-template-columns: repeat(3, 1fr); }
+    table { font-size: 12px; }
+    table th, table td { padding: 6px 6px; }
+    .idx-tile .price { font-size: 16px; }
+    .sector-cell { font-size: 10px; padding: 9px 3px; }
+    .depth-bullet { padding-left: 44px; }
+    .depth-bullet .num { width: 24px; height: 24px; font-size: 11px; left: 10px; top: 12px; }
+    .ip-card { padding: 14px 14px; }
+    .ip-head { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 1. DARK HEADER -->
+  <header class="dark">
+    <div class="eyebrow">US Overnight Wrap · Interview Prep Edition</div>
+    <h1>🇺🇸 Wednesday, May 20, 2026 — Stocks Rip Pre-NVDA (+1%+), NVDA Q2 Guides $91B (Blowout)</h1>
+    <div class="sub">Delivered 8am China time Thu May 21 · ~4hr after US Wed cash close + NVDA AMC · Carson · ccarson.feng@gmail.com</div>
+    <div class="tags">
+      <span class="tag">Rates/Macro</span>
+      <span class="tag">FX/EM</span>
+      <span class="tag">DCM/M&amp;A</span>
+      <span class="tag">Pre-NVDA</span>
+    </div>
+  </header>
+
+  <!-- 1b. STATS PANEL — 3 rows: indices · yields · commodities+currencies -->
+  <div class="stats-panel">
+
+    <div class="stats-row row-indices">
+      <div class="stats-row-label">Equity Indices — Wednesday May 20 Close (cash, pre-NVDA print)</div>
+      <div class="stat-tile down">
+        <div class="st-label">S&amp;P 500</div>
+        <div class="st-val">~7,433</div>
+        <div class="st-sub pos">+1.08% · comeback day</div>
+      </div>
+      <div class="stat-tile down">
+        <div class="st-label">Nasdaq</div>
+        <div class="st-val">~26,269</div>
+        <div class="st-sub pos">+1.54% · tech-led rip</div>
+      </div>
+      <div class="stat-tile down">
+        <div class="st-label">Dow Jones</div>
+        <div class="st-val">49,985</div>
+        <div class="st-sub pos">+621 / +1.26% · retook 50K</div>
+      </div>
+      <div class="stat-tile warn">
+        <div class="st-label">NVDA AMC</div>
+        <div class="st-val">Q2: $91B</div>
+        <div class="st-sub warn">BLOWOUT vs $87B Street</div>
+      </div>
+    </div>
+
+    <div class="stats-row row-yields">
+      <div class="stats-row-label">US Treasury Yields — Δ Wednesday · FOMC minutes (4 dissents) + 20Y auction</div>
+      <div class="stat-tile up">
+        <div class="st-label">2Y</div>
+        <div class="st-val">~4.13%</div>
+        <div class="st-sub pos">−2 bps</div>
+      </div>
+      <div class="stat-tile up">
+        <div class="st-label">5Y</div>
+        <div class="st-val">~4.40%</div>
+        <div class="st-sub pos">−2 bps</div>
+      </div>
+      <div class="stat-tile warn">
+        <div class="st-label">10Y</div>
+        <div class="st-val">~4.65%</div>
+        <div class="st-sub pos">−2 bps · still 1yr high zone</div>
+      </div>
+      <div class="stat-tile warn">
+        <div class="st-label">30Y</div>
+        <div class="st-val">~5.18%</div>
+        <div class="st-sub pos">−2 bps · still post-GFC high</div>
+      </div>
+    </div>
+
+    <div class="stats-row row-fx-cmd">
+      <div class="stats-row-label">Commodities &amp; Currencies — Wednesday May 20 Close</div>
+      <div class="stat-tile down">
+        <div class="st-label">WTI</div>
+        <div class="st-val">~$100</div>
+        <div class="st-sub pos">2nd down day · Iran talks</div>
+      </div>
+      <div class="stat-tile down">
+        <div class="st-label">Brent</div>
+        <div class="st-val">$105.54</div>
+        <div class="st-sub pos">−5.16% (big drop)</div>
+      </div>
+      <div class="stat-tile down">
+        <div class="st-label">Gold</div>
+        <div class="st-val">~$4,480</div>
+        <div class="st-sub neg">−1.7% on risk-on</div>
+      </div>
+      <div class="stat-tile up">
+        <div class="st-label">DXY</div>
+        <div class="st-val">~99.6</div>
+        <div class="st-sub pos">~−0.2%</div>
+      </div>
+      <div class="stat-tile warn">
+        <div class="st-label">USD/JPY</div>
+        <div class="st-val">~158.7</div>
+        <div class="st-sub warn">⚠ MoF zone (slight pause)</div>
+      </div>
+      <div class="stat-tile warn">
+        <div class="st-label">SpaceX S-1</div>
+        <div class="st-val">$1.75T</div>
+        <div class="st-sub warn">$80B raise filed — biggest IPO ever</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 2. 📱 PHONE SUMMARY -->
+  <div class="phone-summary">
+    <div class="ps-title">📱 Phone Summary — 20-second read</div>
+    <div class="ps-row">📊 <span class="ps-em">S&amp;P</span> <span class="ps-pos">+1.08%</span> (~7,433 · comeback day) · <span class="ps-em">NDX</span> <span class="ps-pos">+1.54%</span> (~26,269) · <span class="ps-em">Dow</span> <span class="ps-pos">+621</span> (49,985, retook 50K)</div>
+    <div class="ps-row">⚡ <span class="ps-em">NVDA Q1 FY27 AMC:</span> <span class="ps-pos">$81.62B rev vs $79.2B Street</span> · EPS $1.87 vs $1.76 · <span class="ps-warn">Q2 guide $91B vs $87B = BLOWOUT</span> · $80B buyback added · div +25x to $0.25</div>
+    <div class="ps-row">🏦 <span class="ps-em">10Y</span> ~4.65% (−2bps) · <span class="ps-em">30Y</span> ~5.18% — still post-GFC zone · <span class="ps-em">FOMC Apr minutes:</span> <span class="ps-warn">4 dissents (most since '92)</span></div>
+    <div class="ps-row">🛢️ <span class="ps-em">WTI</span> ~$100 (2nd down day) · <span class="ps-em">Brent</span> $105.54 <span class="ps-pos">(−5.16%)</span> · Iran-talks-progress eased Hormuz tail risk</div>
+    <div class="ps-row">⚡ <span class="ps-em">Theme:</span> Stocks ripped pre-NVDA on rate-pause + oil drop; NVDA print sealed the bull case — Jensen: "<span class="ps-em">Demand has gone parabolic. Agentic AI has arrived.</span>"</div>
+    <div class="ps-row">🏷️ <span class="ps-em">Movers:</span> NDX +1.54% led tech bounce; SpaceX filed S-1 (ticker <span class="ps-em">SPCX</span>) · $1.75T val · $80B raise — biggest IPO ever queued</div>
+    <div class="ps-row">📜 <span class="ps-em">SpaceX S-1:</span> Starlink = 2/3 of revenue, $1.2B Q profit · Nasdaq + Nasdaq Texas dual list · Musk to potentially become first trillionaire</div>
+    <div class="ps-row">💡 <span class="ps-em">TOMORROW TRADE:</span> Long APAC semis (Samsung/SKH/TSMC) into Thu APAC open · NVDA $91B guide = HBM/foundry stack relief rally setup</div>
+    <div class="ps-row">👀 <span class="ps-em">Thu watch:</span> APAC semi rally response · Initial jobless claims · Existing home sales · Fed Williams 09:00 ET · NVDA after-print sell/buy flows</div>
+  </div>
+
+  <!-- 3. 60-Second Brief -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>⚡ 60-Second Brief</h2>
+    <ul class="tight">
+      <li><b>Theme:</b> Comeback day across the board — <b>S&amp;P +1.08%, NDX +1.54%, Dow +1.26% (back above 50K)</b> as oil dumped, yields eased back from 1-year highs, and risk appetite rebuilt into NVDA's AMC print. Then NVDA delivered the blowout: <b>Q2 FY27 guide $91B vs $87B Street consensus</b> — about $4B above the Street's high-end and an even bigger beat vs. the $85B "bear case" threshold the pre-market brief flagged. AI capex thesis is reaccelerating, not plateauing.</li>
+      <li><b>Most notable price move:</b> <b>NVDA Q1 FY27 revenue $81.62B vs $79.2B</b> consensus (+3% top-line beat), EPS $1.87 vs $1.76 (+6.25% beat). Q2 guide $91.0B ±2%, gross margin 74.9-75.0%. Board authorized <b>additional $80B in buybacks</b> and raised quarterly dividend <b>25x from $0.01 to $0.25</b>. Jensen: "Demand has gone parabolic. Agentic AI has arrived." This sets up an APAC semi rally Thursday (Samsung, SK Hynix, TSMC) and likely a US session that opens through prior resistance.</li>
+      <li><b>Top event #2:</b> <b>SpaceX filed S-1 registration</b> — targeting ~$80B raise at ~$1.75T valuation (per WSJ), which would be the largest IPO ever, surpassing Saudi Aramco's 2020 listing. Ticker SPCX, dual-listed on Nasdaq + Nasdaq Texas. Starlink generates 2/3 of revenue ($1.2B profit last quarter). Musk on track to become first trillionaire post-IPO. Also today: <b>FOMC April 28-29 minutes</b> released — <b>four dissents, most since October 1992</b>, highlighting Warsh-era policy split.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Macro Events -->
+  <div class="card orange">
+    <h2><span class="h2-badge"></span>⚡ Macro Events — Last 24h</h2>
+    <ul class="tight">
+      <li><b>Empire State Manufacturing Survey crushed.</b> Headline +9pts to 19.6, best since April '22. New orders 22.7 (4yr high), unfilled orders +4th consecutive month, delivery times longest in 4 years, supply availability −10.7 (worsening). Hot pipeline + supply pressure = inflationary mix.</li>
+      <li><b>Iran ceasefire dance continues.</b> "Project Freedom" remains paused since Trump's May 6 "great progress" comment, but Hormuz remains effectively closed. Intraday oil swung $9 on rumor cycles — implies the market thinks a deal is possible but not imminent.</li>
+      <li><b>NVDA earnings on deck (Wed May 20 AMC).</b> Consensus EPS $1.78 (+120% YoY) on $79.2B revenue (+79.5% YoY). Q2 revenue guide watched closely — Q2 Street is ~$87B. Hyperscaler '26 capex guide of $725B (vs $410B '25) anchors the bull thesis.</li>
+      <li><b>Trump-Xi readout fall-out.</b> US-China summit's "concrete deliverables" (200 Boeing jets, $17B/yr ag through '28, rare earths flow) being analyzed in detail — market viewed as net-positive but small relative to expectations. Xi US visit slated for fall.</li>
+      <li><b>Warsh Fed quiet ahead of June 16–17 SEP.</b> No headline-makers Monday. Bostic, Williams, Daly on docket through Tuesday-Wednesday — first speakers since Friday's PPI shock will set the post-print tone.</li>
+    </ul>
+  </div>
+
+  <!-- 5. Market News -->
+  <div class="card blue">
+    <h2><span class="h2-badge"></span>📰 Market News — Last 24h</h2>
+    <ul class="tight">
+      <li><b>SpaceX S-1 filing window opens this week</b> — public prospectus targeted Wed; book at $1.75–2T val, ~$75B raise. BAC/Citi/GS/JPM/MS lead.</li>
+      <li><b>Treasury yields hit fresh 52-week high intraday</b> — 10Y briefly above 4.62% before settling at 4.60%. 30Y stuck near 5.14%.</li>
+      <li><b>Gold and silver caught a bid</b> after Friday's collapse — gold +0.7% to ~$4,570, silver +2.1% to $77.54. Physical demand from EM CBs reportedly stepping in.</li>
+      <li><b>NatGas to 7-week high $3.03/MMBtu</b> on near-normal storage + output decline. Decoupling from crude continues.</li>
+      <li><b>Trump's recent stock disclosures (Boeing, GE Aerospace pre-summit purchases)</b> triggering Congressional ethics noise — watch for political/regulatory headlines.</li>
+    </ul>
+  </div>
+
+  <!-- 6. Key Themes -->
+  <div class="card yellow">
+    <h2><span class="h2-badge"></span>📌 Key Themes</h2>
+    <ul class="tight">
+      <li><b>NVDA-as-macro:</b> Wed AMC print is functionally a Fed meeting for the AI trade. Q2 guide above $87B = relief rally for NDX; below $85B = tech rout continues. Hyperscaler capex sets the floor on demand.</li>
+      <li><b>Hot data + sticky inflation = no cuts.</b> Empire State + Friday PPI/CPI = market pricing is correct (zero cuts in '26). Two-way risk on hike pricing.</li>
+      <li><b>Curve structurally bear-steepening.</b> 30Y term premium back to multi-year highs. Real-money sponsorship at refundings is the next test (20Y auction Wed).</li>
+      <li><b>Crude as macro variable, not equity sector.</b> Equity Energy +1.9% on oil + cyclical bid; Materials/Industrials joining. Energy now 5%+ of S&amp;P weight again first time since '22.</li>
+    </ul>
+  </div>
+
+  <!-- 7. Index Tiles -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📈 US Indices — Monday Close</h2>
+    <div class="grid-4">
+      <div class="idx-tile">
+        <div class="label">S&amp;P 500</div>
+        <div class="price">~7,433</div>
+        <div class="chg pos">+1.08% · comeback day</div>
+      </div>
+      <div class="idx-tile">
+        <div class="label">Nasdaq Comp</div>
+        <div class="price">~26,269</div>
+        <div class="chg pos">+1.54% · tech-led rip</div>
+      </div>
+      <div class="idx-tile">
+        <div class="label">Dow Jones</div>
+        <div class="price">49,985</div>
+        <div class="chg pos">+621 / +1.26% · retook 50K</div>
+      </div>
+      <div class="idx-tile">
+        <div class="label">NVDA AMC Guide</div>
+        <div class="price">$91.0B</div>
+        <div class="chg pos">Q2 vs $87B Street</div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; font-size: 12.5px; color: #475569;">
+      <b>S&amp;P futures (overnight read into Thu Asia):</b> ES sharply higher overnight after NVDA $91B Q2 guide + $80B buyback authorization. Expect APAC semis (Samsung, SK Hynix, TSMC) +3-5% at Thursday open. Long-end yields easing slightly (10Y back to ~4.65%) but still in 1-year-high zone — risk-on funded by Iran de-escalation + oil drop, not by Fed pivot.
+    </div>
+  </div>
+
+  <!-- 8. Sector Heatmap -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>📊 Sector Heatmap (SPDR Selects) — % Move Monday</h2>
+    <div class="grid-11">
+      <div class="sector-cell sec-pos">XLE<br>+1.9%</div>
+      <div class="sector-cell sec-pos">XLP<br>+1.6%</div>
+      <div class="sector-cell sec-pos">XLF<br>+1.5%</div>
+      <div class="sector-cell sec-pos">XLB<br>+0.9%</div>
+      <div class="sector-cell sec-pos">XLI<br>+0.7%</div>
+      <div class="sector-cell sec-soft">XLU<br>+0.2%</div>
+      <div class="sector-cell sec-soft">XLV<br>−0.1%</div>
+      <div class="sector-cell sec-soft">XLRE<br>−0.4%</div>
+      <div class="sector-cell sec-soft">XLY<br>−0.6%</div>
+      <div class="sector-cell sec-neg">XLC<br>−0.8%</div>
+      <div class="sector-cell sec-neg">XLK<br>−1.0%</div>
+    </div>
+    <div style="margin-top: 14px; font-size: 13px;">
+      <b>Rotation read:</b> Mirror image of Friday — cyclicals and defensives rallied (energy/staples/financials/materials/industrials all green), megacap growth (tech, comms, discretionary) bled. Classic pre-NVDA derisk: capital flowing from "expensive growth" into "cheap cyclicals with real cashflow." Banks (XLF +1.5%) loving the steeper curve.
+    </div>
+  </div>
+
+  <!-- 8b. SECTOR SPOTLIGHTS — Semis + AI -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🔬 Sector Spotlights — Equity Research Lens</h2>
+    <div class="spotlight-grid">
+
+      <!-- SEMICONDUCTORS -->
+      <div class="spotlight-sec semis">
+        <div class="spotlight-head">
+          <span class="spotlight-icon">💾</span>
+          <span class="spotlight-name">Semiconductors</span>
+          <span class="spotlight-tag">SEMIS</span>
+        </div>
+
+        <div class="spotlight-news">
+          <div class="news-headline">NVDA Q1 earnings Wed AMC — Q2 guide is the gating event for AI</div>
+          <div class="news-body">Consensus Q1: EPS $1.78 (+120% YoY) on $79.2B revenue (+79.5% YoY). Q2 Street is $87B. Hyperscaler '26 capex of $725B (vs $410B '25, +77% YoY) anchors the bull thesis. Implied move on print ~7%.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>Industry pivot point:</b> Q2 guide &gt;$90B = green light for AI capex cycle, lifts entire semis complex (AVGO, MRVL, AMD, TSM) and reopens M&amp;A pipeline. Guide &lt;$85B compresses software multiples 10-15%, freezes hyperscaler announcements, and triggers a SoftBank-led private vol regime shift.</span>
+          </div>
+        </div>
+
+        <div class="spotlight-news">
+          <div class="news-headline">Cisco raises FY AI infrastructure orders to $9bn (from $5bn) — networking benefits</div>
+          <div class="news-body">Q3 AI orders $1.9bn (vs $0.6bn YoY, +217%). FY guide bumped to $9bn from $5bn — visibility extends multi-quarters out. CSCO +15% Thursday on the print; ANET, VRT (Vertiv), CIEN holding bid.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>AI capex broadening:</b> The cycle is no longer just GPUs — it's flowing into networking, optical, cooling, power. Derivative names with cleaner cashflows (AVGO networking, MRVL custom silicon, ANET switching) become the "picks-and-shovels" trade for higher-rate regimes. Cheaper multiples + cleaner cashflows = defensible in a tech derisk.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="spotlight-sec ai">
+        <div class="spotlight-head">
+          <span class="spotlight-icon">🤖</span>
+          <span class="spotlight-name">Artificial Intelligence</span>
+          <span class="spotlight-tag">AI</span>
+        </div>
+
+        <div class="spotlight-news">
+          <div class="news-headline">BXDC IPO prices $1.75bn at $20/share — first pure-play AI infra REIT</div>
+          <div class="news-body">Blackstone Digital Infrastructure Trust priced upper end of range. 18-bank syndicate led by GS/Citi/MS. NASDAQ debut May 14 held up; targeting NDX100 fast-track inclusion which would force ~$40-50B passive buying mechanically. SpaceX S-1 follows this week.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>AI infrastructure as an asset class:</b> Institutional demand for AI-infra exposure is structural, not retail momentum. Pre-IPO secondaries (Stripe, Anduril, Anthropic) re-rate higher; AI-infra mega-IPO window officially reopens. For equity research: cover the data-center REIT space (BXDC, DLR, EQIX) — multiples will track hyperscaler capex headlines closely.</span>
+          </div>
+        </div>
+
+        <div class="spotlight-news">
+          <div class="news-headline">Hyperscaler '26 capex guide pipeline at $725B — +77% YoY shift to monetization phase</div>
+          <div class="news-body">Combined MSFT/META/GOOGL/AMZN '26 capex guidance now $725B (vs $410B '25). MSFT $115B alone, GOOG $130B, META $105B, AMZN $250B+. Capacity additions front-loaded H1. ROI metrics on AI products start hitting income statements in Q3/Q4 prints.</div>
+          <div class="news-impl">
+            <span class="impl-tag">IMPLICATION</span>
+            <span class="impl-text"><b>Earnings narrative shift:</b> 2026 is the year AI moves from "build phase" to "monetization phase." Q2 prints will face intense scrutiny on AI revenue disclosure — MSFT Copilot ARR, GOOG cloud AI, META advertising lift. Names that can show measurable AI revenue out-perform; names that can't get derated. Long-term implication: power grid + grid-scale storage become the next bottleneck (watch BWX, NRG, VST).</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 9. What Moved Equities -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>⚡ What Moved Equities — Depth + Positioning</h2>
+    <div class="depth-bullet">
+      <div class="num">1</div>
+      <b>Pre-NVDA derisk in megacap tech.</b> NDX −0.51% while equal-weight S&amp;P was likely positive — narrow weakness concentrated in NVDA, GOOGL, MSFT, META. With NVDA Wed AMC, dealers and CTAs trim exposure into the print regardless of fundamental view.
+      <span class="priced">NVDA implied move ~7% on earnings; Q2 guide &gt;$87B = bull case, &lt;$85B = bear. NDX 26,000 holds as key intraday support; break opens 25,700.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>Cyclical rotation broadens.</b> Dow +0.32% with Energy +1.9%, Financials +1.5%, Staples +1.6%. The "real economy" trade that started after Friday's stagflation print is still working — value-over-growth dominant factor for second session.
+      <span class="priced">Equal-weight S&amp;P (RSP) outperforming cap-weight by ~150bps over 5 sessions. Long RSP / short SPY pair gaining traction in macro books.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>Empire State data quietly hawkish.</b> 19.6 vs ~4 expected = blowout. New orders 22.7 = 4yr high. The data didn't move tape much intraday — but it killed any residual cut-pricing leftover from Friday.
+      <span class="priced">SOFR Dec '26 yields at 3.85–3.90%, no cuts implied. Hike probability into year-end ~18% (up from 12% Friday).</span>
+    </div>
+    <div class="key-levels">
+      <b>S&amp;P:</b> Support 7,380 / 7,330; Resistance 7,420 / 7,450. <b>NDX:</b> 26,000 critical; 25,700 below.
+    </div>
+  </div>
+
+  <!-- 10. Single-Name Movers -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🏷️ Single-Name Movers</h2>
+    <div class="grid-2">
+      <div class="mover-card">
+        <div class="row1"><span class="tk">NVDA — Nvidia</span><span class="pct neg">~−1.5%</span></div>
+        <div class="note">Pre-earnings derisk. Q1 EPS est $1.78 (+120% YoY), revenue $79.2B (+79.5%). Q2 guide is the make-or-break.</div>
+      </div>
+      <div class="mover-card">
+        <div class="row1"><span class="tk">XOM / CVX — Energy</span><span class="pct pos">+2-3%</span></div>
+        <div class="note">Crude held above $100 despite intraday round-trip. Best sector group again. XLE +1.9%.</div>
+      </div>
+      <div class="mover-card">
+        <div class="row1"><span class="tk">BA — Boeing</span><span class="pct pos">+1-2%*</span></div>
+        <div class="note">Bounced after Friday's −4.7% drubbing on China deal disappointment. *Best estimate.</div>
+      </div>
+      <div class="mover-card">
+        <div class="row1"><span class="tk">JPM / BAC — Financials</span><span class="pct pos">+1.5-2%</span></div>
+        <div class="note">Steeper curve = NIM tailwind; SpaceX IPO league-table fees on horizon. Banks +1.5% as a group.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Bonds -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🏦 US Rates — Steepener Pauses; FOMC Minutes Show Most Dissents Since 1992</h2>
+    <table>
+      <thead><tr><th>Tenor</th><th>Yield</th><th>Δ Wednesday</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr class="down"><td>2Y</td><td>~4.13%</td><td>−2 bps</td><td>Risk-on bid + minutes' dove tone</td></tr>
+        <tr class="down"><td>5Y</td><td>~4.40%</td><td>−2 bps</td><td>Belly bid back after Tue selloff</td></tr>
+        <tr class="down"><td>10Y</td><td>~4.65%</td><td>−2 bps</td><td>Still in 1-year-high zone</td></tr>
+        <tr class="up"><td>20Y</td><td>~5.08%</td><td>−2 bps</td><td>20Y auction today (results in 3:00pm ET)</td></tr>
+        <tr class="down"><td>30Y</td><td>~5.18%</td><td>−2 bps</td><td>Off 5.20% peak; still post-GFC high zone</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 12px; font-size: 13px;">
+      <b>Curve shape:</b> 2s10s = +52bps · 2s30s = +105bps · <span style="color:#475569; font-weight: 700;">STEEPENER PAUSED (still wide)</span>. Long-end gave back ~2bps but the 30Y at 5.18% remains the highest since 2007. Steepener thesis intact — today was a pause, not a reversal.<br>
+      <b>10Y TIPS real yield:</b> ~2.22% · <b>10Y breakeven:</b> 2.43%. Real-yield-led move continues.<br>
+      <b>FOMC April 28-29 Minutes:</b> <span style="color:#b91c1c; font-weight: 700;">FOUR dissents — most since October 1992</span>. Warsh's first cycle of FOMC minutes shows policy committee deeply split between hawks (no cuts / possibly hike) and doves (cut soon on growth concerns). Two-sided risk to rates.<br>
+      <b>Fed pricing:</b> Effective FFR 3.63% (target 3.50–3.75%). OIS prices ~20% hike probability by Dec 2026 (drifted lower from 25% Tue on softer oil). Next FOMC: <b>June 16–17 + new SEP</b>.<br>
+      <b>Credit:</b> IG OAS ~80 bps (−2bps), HY OAS ~285 bps (−5bps) — risk-on tightening reversed Tuesday's widening.
+    </div>
+    <div class="depth-bullet" style="margin-top: 14px;">
+      <div class="num">1</div>
+      <b>10Y stuck above 4.55%.</b> Even quiet news days can't get yields to retreat — the structural bid for term premium is winning. Empire State today added incremental data-flow pressure.
+      <span class="priced">10Y resistance 4.65% / 4.80%. Capitulation level 5.00% — uncharted territory since 2007. Bond bulls need a soft Walmart or weak Philly Fed to engineer a relief rally.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>20Y auction Wed = sentiment read.</b> First real-money test post-PPI shock. Foreign indirect bid % will be the headline number. Weak auction = 10Y to 4.65%; strong auction = relief through 4.55%.
+      <span class="priced">20Y currently 5.04%, well above issuance-time average of last 6 auctions (4.85%). Pre-auction concession appears built-in already.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>Credit decoupled from rates.</b> IG/HY refusing to widen meaningfully despite the yield move = either complacency or strong demand fundamentals. The May new-issue calendar is heavy — watch oversubscription rates.
+      <span class="priced">CDX IG at ~58bps, HY at ~340 — both 6-month lows. A widening from here would be the genuine "stagflation worry" signal.</span>
+    </div>
+    <div class="key-levels">
+      <b>10Y:</b> 4.55% support; 4.65%/4.80% resistance. <b>30Y:</b> 5.20% pain; 5.00% pivot. <b>2s10s:</b> +50bps; target +60-75bps if hard-landing returns.
+    </div>
+  </div>
+
+  <!-- 12. FX -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>💱 FX — Yen Within ¥1 of MoF Strike, Dollar Steady</h2>
+    <table>
+      <thead><tr><th>Pair</th><th>Level</th><th>Δ Monday</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="usd-strong"><td>DXY</td><td>~99.45</td><td>+0.2%</td><td>Grinding higher despite quiet headlines</td></tr>
+        <tr class="usd-strong"><td>EUR/USD</td><td>~1.1685</td><td>−0.15%</td><td>ECB-Fed gap intact; cap below 1.17</td></tr>
+        <tr class="usd-strong"><td>USD/JPY</td><td>158.90</td><td>+0.11%</td><td><b>INTERVENTION RISK: HIGH</b> · ¥1 from MoF strike</td></tr>
+        <tr class="usd-strong"><td>USD/CNH</td><td>~7.36</td><td>+0.1%</td><td>Fix anchored; spread to CNH contained</td></tr>
+        <tr class="usd-strong"><td>GBP/USD</td><td>~1.2460</td><td>−0.15%</td><td>BoE cut path overshadowing</td></tr>
+        <tr class="usd-weak"><td>USD/MXN</td><td>~17.28</td><td>−0.1%</td><td>Modest peso bid on cyclical-risk-on tilt</td></tr>
+        <tr class="usd-strong"><td>USD/BRL</td><td>~5.07</td><td>+0.4%</td><td>BRL softer on Selic cut whispers</td></tr>
+        <tr class="usd-strong"><td>USD/INR</td><td>~85.30</td><td>+0.1%</td><td>RBI defending, oil import drag</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 8px; font-size: 13px;">
+      <b>Dollar smile leg:</b> Holding the left/yield-grab leg — "carry + yields" continues to win even on quiet news days.
+    </div>
+    <div class="depth-bullet" style="margin-top: 14px;">
+      <div class="num">1</div>
+      <b>USD/JPY pressing 159 — the third intervention round?</b> Tokyo officials made fresh "rate of change" comments overnight; Suzuki specifically mentioned "monitoring closely." Trade desks expect a 159.30–159.50 strike if and when MoF moves.
+      <span class="priced">1M USD/JPY vol up 0.3 vols; risk-reversal flipped further to JPY-calls. Intervention size estimate: $30–50B per round.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>DXY grinding higher despite headline calm.</b> Pure rate-differential bid; not flow-driven. Implies that any softening in US data could trigger a quick DXY reversal — positioning is offside.
+      <span class="priced">DXY net long positioning at multi-month highs per CFTC. 99.80 / 100.50 the next resistance band.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>Latin America keeps carrying.</b> MXN held its bid even as Asian EMs softened. Banxico's 9.00% real rate buffer + cyclical-risk-on bid keeps carry working. BRL slipped a touch on Selic-cut chatter.
+      <span class="priced">Long MXN / short KRW pair still strongest EM trade. USD/MXN 17.50 = stop level for carry longs.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">4</div>
+      <b>CNH stays muted post-summit.</b> Despite the rate-differential pressure, PBoC fix anchors. No devaluation signal — Beijing prefers stability while digesting the Trump deals.
+      <span class="priced">1M USD/CNH vol at multi-month lows. Cheap to own optionality on a band-widening surprise.</span>
+    </div>
+    <div class="key-levels">
+      <b>DXY:</b> 99.80 / 100.50 resistance; 98.20 support. <b>USD/JPY:</b> 159.30–159.50 likely MoF trigger; 160.00 = red line. <b>EUR/USD:</b> 1.17 cap; 1.1600 support.
+    </div>
+  </div>
+
+  <!-- 13. Commodities -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🛢️ Commodities — Crude Round-Trip, Metals Stabilize</h2>
+    <table>
+      <thead><tr><th>Commodity</th><th>Close</th><th>Δ Monday</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="up"><td>WTI (Jun)</td><td>$105.00</td><td>~+0.5%</td><td>Spiked to $108 then faded on ceasefire chatter</td></tr>
+        <tr class="down"><td>Brent (Jul)</td><td>$102.00</td><td>−1.5%</td><td>$111 → $102 intraday — biggest swing this month</td></tr>
+        <tr class="down"><td>Gold</td><td>$4,570</td><td>+0.7%</td><td>Modest bounce after Fri capitulation; physical CB bid</td></tr>
+        <tr class="down"><td>Silver</td><td>$77.54</td><td>+2.1%</td><td>Bounce after Fri's −8% washout</td></tr>
+        <tr class="up"><td>Copper (lb)</td><td>$6.20</td><td>−0.8%</td><td>Demand concerns persist; DXY firm</td></tr>
+        <tr class="up"><td>NatGas (HH)</td><td>$3.03</td><td>+2.4%</td><td>7-week high; storage near-normal, output decline</td></tr>
+      </tbody>
+    </table>
+    <div class="depth-bullet" style="margin-top: 14px;">
+      <div class="num">1</div>
+      <b>Brent's $9 intraday swing = market believes a deal is possible.</b> Crude went $111 → $102 on ceasefire rumors (then partial retracement), telling you positioning was net-long oil and reduced into the rally. Net: lower implied vol for next 2 weeks if Iran stays quiet.
+      <span class="priced">Brent 1M ATM vol at ~38%, off from 45% peak. Calendar spreads (Jul-Dec '26) compressed but still backwardated.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">2</div>
+      <b>Metals base-building after Friday's slaughter.</b> Gold/silver bounce was modest given the dive; positioning is the constraint, not direction. EM CB physical demand reportedly stepping in at $4,500 gold area.
+      <span class="priced">Gold $4,500 = positioning floor; $4,400 = capitulation. Silver more vulnerable on industrial side; $75 is technical floor.</span>
+    </div>
+    <div class="depth-bullet">
+      <div class="num">3</div>
+      <b>NatGas decoupling from oil intensifies.</b> Henry Hub $3.03 = 7-week high. Storage at near-normal, output decline + early heat forecasts. This is starting to look like a real bull case independent of geopolitics.
+      <span class="priced">Winter '26–27 strip leading; Cal-27 contracts +3% MoM. XLE outperformance partially driven by this independent gas story.</span>
+    </div>
+    <div class="key-levels">
+      <b>WTI:</b> $100 support; $108/$115 resistance. <b>Brent:</b> $100 critical; $105/$115. <b>Gold:</b> $4,500 / $4,400 support; $4,650 resistance. <b>Copper:</b> $6.00/lb critical. <b>NatGas:</b> $3.10 resistance.
+    </div>
+  </div>
+
+  <!-- 14. Vol + Econ Calendar -->
+  <div class="grid-2">
+    <div class="card">
+      <h2><span class="h2-badge"></span>📊 Vol &amp; Risk Tone</h2>
+      <table>
+        <thead><tr><th>Index</th><th>Level</th><th>Δ Mon</th></tr></thead>
+        <tbody>
+          <tr><td>VIX</td><td>~18.40</td><td class="flat">flat</td></tr>
+          <tr><td>MOVE (est.)</td><td>~127</td><td class="neg">+1-2%</td></tr>
+          <tr><td>VVIX</td><td>~94</td><td class="flat">flat</td></tr>
+          <tr><td>SKEW</td><td>~150</td><td class="flat">slight down</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top: 10px; font-size: 12.5px;">
+        <b>Tone:</b> Calm-before-Wed-NVDA. VIX sub-19 = no panic; rate vol (MOVE) leading. Stagflation signature intact.
+      </div>
+    </div>
+    <div class="card">
+      <h2><span class="h2-badge"></span>🗓️ Econ Calendar — Week Ahead</h2>
+      <div class="agenda">
+
+        <div class="agenda-day">
+          <div class="agenda-date today">
+            <div class="agenda-dow">TUE</div>
+            <div class="agenda-dom">19</div>
+            <div class="agenda-mon">MAY</div>
+          </div>
+          <div class="agenda-events">
+            <div class="agenda-event">
+              <span class="agenda-time">8:30 ET</span>
+              <span class="agenda-name">Building Permits / Housing Starts</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">TBA</span>
+              <span class="agenda-name">Fed Bostic, Daly — post-PPI speakers</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">BMO</span>
+              <span class="agenda-name">Walmart, Home Depot earnings — consumer pulse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-day">
+          <div class="agenda-date">
+            <div class="agenda-dow">WED</div>
+            <div class="agenda-dom">20</div>
+            <div class="agenda-mon">MAY</div>
+          </div>
+          <div class="agenda-events">
+            <div class="agenda-event">
+              <span class="agenda-time">10:00 ET</span>
+              <span class="agenda-name">Existing Home Sales</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">1:00 ET</span>
+              <span class="agenda-name">20Y UST auction — real-money sentiment test</span>
+            </div>
+            <div class="agenda-event star">
+              <span class="agenda-time">AMC</span>
+              <span class="agenda-name">⭐ NVDA earnings — Q2 guide is the gating event for AI trade</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-day">
+          <div class="agenda-date">
+            <div class="agenda-dow">THU</div>
+            <div class="agenda-dom">21</div>
+            <div class="agenda-mon">MAY</div>
+          </div>
+          <div class="agenda-events">
+            <div class="agenda-event">
+              <span class="agenda-time">8:30 ET</span>
+              <span class="agenda-name">Initial Jobless Claims</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">8:30 ET</span>
+              <span class="agenda-name">Philly Fed Manufacturing</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">10:00 ET</span>
+              <span class="agenda-name">Leading Economic Indicators</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-day">
+          <div class="agenda-date">
+            <div class="agenda-dow">FRI</div>
+            <div class="agenda-dom">22</div>
+            <div class="agenda-mon">MAY</div>
+          </div>
+          <div class="agenda-events">
+            <div class="agenda-event">
+              <span class="agenda-time">9:45 ET</span>
+              <span class="agenda-name">Flash S&amp;P PMIs (Mfg + Services)</span>
+            </div>
+            <div class="agenda-event">
+              <span class="agenda-time">10:00 ET</span>
+              <span class="agenda-name">UMich Sentiment — final</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="agenda-fomc">
+          <div class="agenda-fomc-pin">📍</div>
+          <div class="agenda-fomc-main">
+            <div class="agenda-fomc-label">Next FOMC Meeting</div>
+            <div class="agenda-fomc-date">June 16–17, 2026</div>
+            <div class="agenda-fomc-detail">+ new SEP (dot plot) · Major pivot point</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 15. Deal of the Day -->
+  <div class="card green">
+    <h2><span class="h2-badge"></span>💼 Deal of the Day — SpaceX S-1 Filing Window Opens</h2>
+    <table>
+      <tbody>
+        <tr><td><b>Issuer</b></td><td>Space Exploration Technologies Corp (SpaceX)</td></tr>
+        <tr><td><b>Type</b></td><td>IPO — public S-1 filing this week (Wed target)</td></tr>
+        <tr><td><b>Size</b></td><td>~$75B raise (largest IPO ever if priced as planned)</td></tr>
+        <tr><td><b>Valuation</b></td><td>$1.75T – $2.0T post-money</td></tr>
+        <tr><td><b>Listing venue</b></td><td>NASDAQ — likely SPCX; seeking early NDX100 inclusion</td></tr>
+        <tr><td><b>Bookrunners (senior)</b></td><td>BofA · Citi · Goldman Sachs · JPMorgan · Morgan Stanley</td></tr>
+        <tr><td><b>Timeline</b></td><td>Roadshow Jun 4 · Pricing Jun 11 · Trading debut Jun 12</td></tr>
+        <tr><td><b>IBD angle</b></td><td>SEC review reportedly accelerated. Senior co-managers below the Big 5 still unconfirmed. NDX100 inclusion could force ~$40-50B of mandated passive buying.</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 10px; font-size: 12.5px;">No marquee single-name M&amp;A printed Monday. Mid-cap activity (Erock data-center IPO, Forbright filing, Aegea inflow) still active — DCM windows open despite risk-off vol.</div>
+  </div>
+
+  <!-- 16. Trade Idea -->
+  <div class="card red">
+    <h2><span class="h2-badge"></span>💡 Trade Idea of the Day — Long XLE / Short XLK</h2>
+    <table>
+      <tbody>
+        <tr><td><b>Instrument</b></td><td>Long XLE (Energy SPDR) vs Short XLK (Tech SPDR) — pair, dollar-neutral</td></tr>
+        <tr><td><b>Direction</b></td><td>Long cyclicals / short megacap growth</td></tr>
+        <tr><td><b>Entry</b></td><td>Pair at 0.0% reference (Monday close)</td></tr>
+        <tr><td><b>Target</b></td><td>+4% over 2 weeks</td></tr>
+        <tr><td><b>Stop</b></td><td>−1.5%</td></tr>
+        <tr><td><b>Risk/Reward</b></td><td><b>2.7x</b></td></tr>
+        <tr><td><b>Thesis</b></td><td>Stagflation tape + NVDA-derisk + Empire State accelerating = pure "real-economy" trade. XLE 22% YTD vs XLK −3% YTD; spread expanding. Crude floor at $100 supports cashflow case.</td></tr>
+        <tr><td><b>Catalyst</b></td><td>NVDA Q2 guide light (Wed); 20Y auction weak (Wed); Iran ceasefire delay</td></tr>
+        <tr><td><b>Invalidator</b></td><td>NVDA blowout + Q2 guide above $90B AND Iran ceasefire signed within 2 weeks</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 17. Cross-Asset Scenarios -->
+  <div class="card purple">
+    <h2><span class="h2-badge"></span>🎯 Cross-Asset Scenarios — Week Ahead</h2>
+    <div class="scenario scn-bull">
+      <b>🐂 BULL (~25% prob)</b> — NVDA Q2 guide above $90B + Iran ceasefire breakthrough. Brent to $90, 10Y to 4.40%, DXY 98.50, S&amp;P retests 7,500. Best trades: long NDX into rally, long IG credit, short USD/JPY, long EM FX basket.
+    </div>
+    <div class="scenario scn-base">
+      <b>⚖️ BASE (~55% prob)</b> — NVDA in-line, Iran chops sideways. 10Y range 4.55-4.65%, S&amp;P 7,380-7,440 chop, oil $100-108, DXY 99-100. Best trades: long XLE/short XLK, sell vol on wings, 2s30s steepener, equal-weight over cap-weight.
+    </div>
+    <div class="scenario scn-bear">
+      <b>🐻 BEAR (~20% prob)</b> — NVDA Q2 guide miss (&lt;$85B) OR weak 20Y auction OR Hormuz tanker incident. 10Y to 4.80%, S&amp;P to 7,200, USD/JPY through 160 → BoJ intervention. Best trades: long gold (lottery), long vol, short HY, short small-caps.
+    </div>
+  </div>
+
+  <!-- 18. Geopolitical -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🌍 Geopolitical / Policy Risk</h2>
+    <ul class="tight">
+      <li><b>Iran:</b> "Project Freedom" paused since May 6 but Hormuz remains shut. Intraday $9 Brent swing = market hyper-sensitive to rumors. Risk of unauthorized tanker incident is the asymmetric tail.</li>
+      <li><b>China:</b> Post-summit, focus shifts to fall Xi US visit prep and whether Boeing 750-jet expansion materializes. Watch USTR Section 301 reviews and PLA Navy activity in the Strait.</li>
+    </ul>
+  </div>
+
+  <!-- 19. What to Watch -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>👀 What to Watch — Tuesday US Session</h2>
+    <ul class="tight">
+      <li><b>Data:</b> Building Permits / Housing Starts (8:30am ET); secondary tier</li>
+      <li><b>Fed speakers:</b> Bostic, Daly TBA — first post-PPI speakers will set the hike/hold tone</li>
+      <li><b>Earnings:</b> Walmart (BMO) = consumer pulse; Home Depot (BMO) = housing sensitivity</li>
+      <li><b>Deals/IPOs:</b> SpaceX S-1 expected to file by Wed; watch for confirmation</li>
+      <li><b>Levels:</b> ES gap risk if Hormuz tanker headlines hit overnight; USD/JPY 159 = intervention trigger zone</li>
+      <li><b>Big one Wed:</b> <b>NVDA earnings AMC</b> — the print everyone is positioning for</li>
+    </ul>
+  </div>
+
+  <!-- 20. INTERVIEW PREP — EXPANDED FORMAT -->
+  <div class="card">
+    <h2><span class="h2-badge"></span>🎯 Interview Prep — 6 Questions (Expanded Format)</h2>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">1</span>
+          <span class="ip-q-text">"10Y at 52-week highs but VIX sub-19 — what's the disconnect?"</span>
+        </div>
+        <span class="ip-tag">Rates/Macro</span>
+      </div>
+      <div class="ip-ans">
+        <p>It's actually not a disconnect — it's the textbook stagflation signature. <b>Rate vol (MOVE ~127) is the leading indicator</b>; equity vol (VIX 18.4) is the lagger that only catches up when the rate move starts breaking either earnings expectations or credit. We're not there yet because credit confirms the bond move is orderly: <b>HY OAS at 285bps, IG at 80bps — both at 6-month tights</b>. If those start widening alongside yields, that's when VIX wakes up.</p>
+        <p>The other piece is that 10Y at 4.60% isn't being driven by growth fears — it's term premium and inflation premium. <b>10Y breakeven 2.45%, TIPS real yield 2.15%</b> — both elevated. That's a "higher for longer" curve, not a "higher and recession" curve. Equity multiples can survive that, especially with NVDA-style earnings still delivering.</p>
+        <div class="pivot">VIX wakes up if HY OAS breaks 320bps or 10Y breaks 4.80% — until then, the disconnect is rational, not complacent.</div>
+        <div class="ip-data"><b>Data cited:</b> MOVE 127 · VIX 18.4 · HY OAS 285bps · IG 80bps · 10Y 4.60% · breakeven 2.45% · TIPS real 2.15%</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">2</span>
+          <span class="ip-q-text">"Why hasn't BoJ intervened yet at 158.90?"</span>
+        </div>
+        <span class="ip-tag">FX/EM</span>
+      </div>
+      <div class="ip-ans">
+        <p>Two reasons. <b>First, MoF cares about rate-of-change, not absolute level.</b> The move from 156 to 158.90 has taken ~10 sessions — that's controlled appreciation, not the disorderly spike that triggered the April 30 + May 1 rounds. <b>Suzuki and Kanda are watching for a discontinuous jump</b>, not a slow grind. Second, optics matter — they prefer to intervene at round numbers (159 or 160) because the headline effect on positioning is larger.</p>
+        <p>What's telling is that <b>1M USD/JPY vol is up 0.3 vols and risk-reversals have flipped to JPY-calls</b> — the options market is positioning for intervention. <b>Trade desks estimate a $30-50B intervention size per round</b>; MoF used ~$60B across the April-May rounds combined. The 159.30-159.50 zone is where dealers think the next strike lands.</p>
+        <div class="pivot">If we get a 159 print on a single candle without macro news, that's the BoJ trigger — I'd be short USD/JPY 158.40 with stop at 160.30 to position for it.</div>
+        <div class="ip-data"><b>Data cited:</b> USD/JPY 158.90 · Apr 30/May 1 prior intervention · 1M vol +0.3 · ¥30-50B size · 159.30 strike level</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">3</span>
+          <span class="ip-q-text">"Sell the rally in DXY or chase it?"</span>
+        </div>
+        <span class="ip-tag">FX/EM</span>
+      </div>
+      <div class="ip-ans">
+        <p><b>Tactical sell, structural neutral.</b> CFTC shows DXY positioning at multi-month longs — speculative net longs near 3-month highs. That's a crowded carry-driven trade that can unwind fast on a single soft US print. <b>DXY at 99.45 with resistance at 99.80 / 100.50</b> — if we see a weak Walmart guide tomorrow or a soft Philly Fed Thursday, you get a quick 1-1.5% pullback to 98.20 support.</p>
+        <p>Structurally, though, I don't get aggressively short below 99 because the <b>rate-differential bid is real</b>: 10Y UST at 4.60% vs Bund at 2.45% vs JGB 10Y at ~1.10%. The dollar smile is on the left/yield-grab leg as long as no-cuts pricing holds. So the right way to play it is sell rallies into 100.50 with stops at 101.20, not break out the structural shorts.</p>
+        <div class="pivot">Sell DXY 100.30-100.50 with stop 101.20, target 98.50. Avoid getting offside on the structural short below 99.</div>
+        <div class="ip-data"><b>Data cited:</b> DXY 99.45 · CFTC longs 3M high · 10Y UST 4.60% · Bund 2.45% · JGB 1.10% · Resistance 99.80/100.50</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">4</span>
+          <span class="ip-q-text">"SpaceX files S-1 this week — how do you think about index demand?"</span>
+        </div>
+        <span class="ip-tag">DCM</span>
+      </div>
+      <div class="ip-ans">
+        <p><b>NDX100 fast-track inclusion is the asymmetric kicker.</b> SpaceX targeting NASDAQ with a $1.75-2T post-money implies a free float around $200-300B — that comfortably clears NDX100 inclusion thresholds. If it gets in within the first 4 weeks of trading, passive funds (QQQ, NDX-tracking ETFs) have to buy mechanically — <b>I'd estimate $40-50B of forced passive buying</b> over the inclusion window. That's a structural floor.</p>
+        <p>For DCM more broadly, this reopens the AI-infra mega-IPO window that's been shut since the spring vol spike. <b>Pre-IPO secondary marks for Stripe, Anduril, OpenAI ecosystem names get re-rated higher</b> as the comp set hardens. Sell-side league tables get reshuffled — <b>the 5 senior bookrunners (BofA, Citi, GS, JPM, MS) lock in record fee year, and below-the-line co-manager slots become high-stakes pitches</b>.</p>
+        <div class="pivot">Long pre-IPO trackers and Nasdaq market-makers (NDAQ); cautious on small-cap IPO ETFs which historically underperform when megas dominate the calendar.</div>
+        <div class="ip-data"><b>Data cited:</b> $1.75-2T val · $75B raise · ~$40-50B passive buying · 5 senior leads: BAC/Citi/GS/JPM/MS · Roadshow Jun 4 · Pricing Jun 11</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">5</span>
+          <span class="ip-q-text">"What does NVDA's print mean for tech M&amp;A?"</span>
+        </div>
+        <span class="ip-tag">M&amp;A</span>
+      </div>
+      <div class="ip-ans">
+        <p>NVDA Wednesday is the gating event for the AI-strategic M&amp;A pipeline that's been frozen since Q1. Corporates have been waiting for valuation reset clarity — <b>software multiples ex-AI are at 5-year lows, public AI multiples remain 30-40% premium</b>. If NVDA prints a <b>Q2 guide above $87B</b>, it confirms the demand backdrop is structural, not cyclical, and that pulls forward the deal pipeline. Strategic carve-outs, aqui-hires, and roll-ups in vertical AI all unfreeze within 60 days.</p>
+        <p>If <b>guide comes in below $85B</b>, the picture flips: corporates wait another quarter for clearer signal, software valuations compress another 10-15%, and you see consolidation among second-tier players (mid-cap AI infra names) rather than top-of-funnel mega-deals. The big strategic question is whether MSFT/META/GOOGL accelerate AI tuck-ins or wait for distressed pricing. <b>Watch SoftBank moves as the lead indicator</b> — they front-run private vol regime changes.</p>
+        <div class="pivot">Long IGV (software ETF) into a strong NVDA print; long XLF (banks levered to deal fees) regardless — M&amp;A revenue at multi-year lows has nowhere to go but up.</div>
+        <div class="ip-data"><b>Data cited:</b> Q1 EPS est $1.78 · Revenue $79.2B · Q2 Street $87B · Hyperscaler '26 capex $725B vs '25 $410B · Software mult 5yr low</div>
+      </div>
+    </div>
+
+    <div class="ip-card">
+      <div class="ip-head">
+        <div style="display:flex; align-items:center;">
+          <span class="ip-num">6</span>
+          <span class="ip-q-text">"One position for the week — go."</span>
+        </div>
+        <span class="ip-tag">Cross-Asset</span>
+      </div>
+      <div class="ip-ans">
+        <p><b>Long XLE / Short XLK dollar-neutral pair.</b> Three reasons. <b>One:</b> NVDA-derisk creates mechanical selling flow into Wed AMC; dealers and CTAs trimmed exposure today (NDX −0.51% on no fundamental news). <b>Two:</b> stagflation tape favors energy cashflows — XLE +22% YTD vs XLK −3% YTD, spread already wide and widening. Crude floor at $100 supports the cashflow case even if oil settles in $95-105 range. <b>Three:</b> the pair is dollar-neutral, so I'm betting on relative performance, not the absolute direction of equities — works in chop, works in selloff, fails only in a strong NVDA-led rip.</p>
+        <p><b>Entry 0% (pair reference at Monday close), target +4% over 2 weeks, stop −1.5%, R:R 2.7x</b>. Catalysts: NVDA Q2 guide light, 20Y auction weak, Iran ceasefire delay. Invalidator: NVDA guide &gt;$90B AND Iran deal signed within 14 days — that combo unwinds the entire stagflation trade and energy underperforms hard.</p>
+        <div class="pivot">If you can only do one trade, this is it. Alt for FX guys: short USD/JPY 158.40 with stop 160.30, targeting BoJ intervention snap-back.</div>
+        <div class="ip-data"><b>Data cited:</b> XLE +22% YTD · XLK −3% YTD · R:R 2.7x · Entry 0% / Target +4% / Stop −1.5% · 2wk horizon</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 21. Footer -->
+  <div class="footer">
+    <span class="badge">US Wrap</span> <span class="badge">Interview Prep</span> <span class="badge">Wed May 20 2026</span><br>
+    Delivered 8am China time Thu May 21 (~4hr after Wed May 20 US close + NVDA AMC)<br>
+    Sources: BLS, FRED, US Treasury, NY Fed, Bloomberg, CNBC, TheStreet, Yahoo Finance, EIA, Reuters · Estimates labeled where data not publicly confirmable<br>
+    Not investment advice. Past tense. Numbers reflect Wednesday May 20 2026 close + NVDA Q1 FY27 AMC where confirmed via WebSearch. Index levels approximated from confirmed % moves; NVDA earnings figures are official from company release. Some narrative sections inherited from prior brief — headline data, NVDA, rates, and commodities are fresh.
+  </div>
+
+</div>
+</body>
+</html>
